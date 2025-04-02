@@ -60,7 +60,17 @@ rule file_detect_magic_RIFF_WEBP {
 }
 
 
-
+rule file_detect_magic_UNKNOWN_EXT_PKG_1 {
+    meta:
+        author = "xCEVre"
+        date = "2025-04-02"
+        description = "Обнаружение не известного типа с расширением .pkg"
+		severityLevel= "UNKNOWN"
+    strings:
+        $header = { 04 00 00 00 AA 00 00 00 01 00 00 00 9E 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? ?? ?? }
+    condition:
+        $header at 0
+}
 
 rule file_detect_magic_UNKNOWN_IMAGE_CONTAINER_1 {
     meta:
