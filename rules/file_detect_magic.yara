@@ -71,6 +71,18 @@ rule file_detect_magic_CEPACK {
         $header at 0
 }
 
+rule file_detect_magic_VALVE_STEAM_CACHE_1 {
+    meta:
+        author = "xCEVre"
+        date = "2025-04-02"
+        description = "Обнаружение кеш файлов"
+		severityLevel= "UNKNOWN"
+    strings:
+        $header = { 02 00 00 00 ?? ?? ?? ?? 00 00 00 00 ?? ?? ?? 66 01 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 61 }
+    condition:
+        $header at 0
+}
+
 rule file_detect_magic_UNKNOWN_EXT_PKG_1 {
     meta:
         author = "xCEVre"
