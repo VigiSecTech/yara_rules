@@ -59,6 +59,17 @@ rule file_detect_magic_RIFF_WEBP {
 		file_detect_magic_RIFF and $webp_header at 8
 }
 
+rule file_detect_magic_CEPACK {
+    meta:
+        author = "xCEVre"
+        date = "2025-04-02"
+        description = "Обнаружение файлов CEPACK"
+		severityLevel= "UNKNOWN"
+    strings:
+        $header = { 43 45 50 41 43 4B }
+    condition:
+        $header at 0
+}
 
 rule file_detect_magic_UNKNOWN_EXT_PKG_1 {
     meta:
