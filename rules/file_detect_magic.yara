@@ -14,11 +14,22 @@
 
 
 
+rule file_detect_magic_UNKNOWN_PAK_1{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-03"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects UNKNOWN files with extension '.pak' "
+    strings:
+        $header = { 05 00 00 00 01 00 00 00 }
+    condition:
+        $header at 0
+}
 
 rule file_detect_magic_RVDATA2{
     meta:
         author = "xCEVre"
-        date = "2025-04-01"
+        date = "2025-04-03"
         severityLevel= "INFORMATIONAL"
         description = "Detects rvdata2 files"
     strings:
