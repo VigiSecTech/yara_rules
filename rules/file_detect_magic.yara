@@ -10,6 +10,25 @@
 
 
 
+
+
+
+
+
+rule file_detect_magic_RVDATA2{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-01"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects rvdata2 files"
+    strings:
+        $header = { 04 08 }
+    condition:
+        $header at 0
+}
+
+
+
 rule file_detect_magic_RIFF {
     meta:
         author = "xCEVre"
