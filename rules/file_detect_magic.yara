@@ -11,7 +11,17 @@
 
 
 
-
+rule file_detect_magic_PYTHON_BYTE_COMPILED_2v7v{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-04"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects '.pyo' files (python 2.7 byte-compiled)"
+    strings:
+        $header = { 03 F3 0D 0A ?? ?? ?? ?? }
+    condition:
+        $header at 0
+}
 rule file_detect_magic_UNITY_LEVEL{
     meta:
         author = "xCEVre"
