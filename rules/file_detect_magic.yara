@@ -12,7 +12,17 @@
 
 
 
-
+rule file_detect_magic_UNITY_LEVEL{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-03"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects levelX files"
+    strings:
+        $header = { 00 00 00 00 00 00 00 00 00 00 00 16 00 00 00 00 00 00 00 00 00  }
+    condition:
+        $header at 0
+}
 
 rule file_detect_magic_UNKNOWN_PAK_1{
     meta:
