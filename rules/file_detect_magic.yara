@@ -9,6 +9,19 @@
 //	UNKNOWN       // Не известно.Используется для хранилищ (архивы и тд)
 
 
+rule file_detect_magic_MPEG_1_LAYER_3_MP3{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-04"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects '.DS_Store' files"
+    strings:
+        $header_1 = { FF FB }
+        $header_2 = { FF F3 }
+        $header_3 = { FF F2 }
+    condition:
+        any of them at 0
+}
 
 rule file_detect_magic_APPLE_DESKTOP_SERVICES_STORE{
     meta:
