@@ -8,6 +8,18 @@
 //
 //	UNKNOWN       // Не известно.Используется для хранилищ (архивы и тд)
 
+rule file_detect_magic_RENPY_ARCHIVE{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-04"
+        severityLevel= "UNKNOWN"
+        description = "Detects '.rpa' files"
+    strings:
+        $header = { 52 50 41 2D 33 2E 30 20 30 30 30 30 30 30 30 30 }
+    condition:
+        $header at 0
+}
+
 
 rule file_detect_magic_MPEG_1_LAYER_3_MP3{
     meta:
