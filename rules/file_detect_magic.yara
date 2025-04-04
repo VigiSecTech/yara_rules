@@ -15,11 +15,22 @@
 rule file_detect_magic_UNITY_LEVEL{
     meta:
         author = "xCEVre"
-        date = "2025-04-03"
+        date = "2025-04-04"
         severityLevel= "INFORMATIONAL"
         description = "Detects levelX files"
     strings:
         $header = { 00 00 00 00 00 00 00 00 00 00 00 16 00 00 00 00 00 00 00 00 00  }
+    condition:
+        $header at 0
+}
+rule file_detect_magic_UNITY_resource{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-04"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects '.resource' files"
+    strings:
+        $header = { 46 53 42 35 01 00 00 00 01 00 00 00  }
     condition:
         $header at 0
 }
