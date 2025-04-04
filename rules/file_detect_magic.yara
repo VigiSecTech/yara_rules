@@ -10,7 +10,17 @@
 
 
 
-
+rule file_detect_magic_APPLE_DESKTOP_SERVICES_STORE{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-04"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects '.DS_Store' files"
+    strings:
+        $header = { 00 00 00 01 42 75 64 31 00 00 }
+    condition:
+        $header at 0
+}
 rule file_detect_magic_PYTHON_BYTE_COMPILED_2v7v{
     meta:
         author = "xCEVre"
@@ -18,7 +28,7 @@ rule file_detect_magic_PYTHON_BYTE_COMPILED_2v7v{
         severityLevel= "INFORMATIONAL"
         description = "Detects '.pyo' files (python 2.7 byte-compiled)"
     strings:
-        $header = { 03 F3 0D 0A ?? ?? ?? ?? }
+        $header = { 03 F3 0D 0A }
     condition:
         $header at 0
 }
