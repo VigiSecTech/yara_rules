@@ -20,6 +20,18 @@ rule file_detect_magic_CRYPTO_PEM_RSA_PRIVATE_KEY{
     condition:
         $header at 0
 }
+rule file_detect_magic_CRYPTO_PEM_CERTIFICATE{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-05"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects PEM certificate files"
+    strings:
+        $start = { 2d 2d 2d 2d 2d 42 45 47  49 4e 20 43 45 52 54 49 46 49 43 41 54 45 2d 2d  2d 2d 2d }
+        $end = { 2d 2d 2d 2d 2d 45 4e 44  20 43 45 52 54 49 46 49 43 41 54 45 2d 2d 2d 2d  2d }
+    condition:
+        any of them at 0
+}
 
 
 rule file_detect_magic_ELF{
