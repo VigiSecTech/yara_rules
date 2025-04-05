@@ -79,6 +79,18 @@ rule file_detect_magic_APPLE_DESKTOP_SERVICES_STORE{
     condition:
         $header at 0
 }
+
+rule file_detect_magic_PYTHON_BYTE_COMPILED_CPython_3v9{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-05"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects '.pyc' files (Byte-compiled Python module for CPython 3.9)"
+    strings:
+        $header = { 61 0D 0D 0A  }
+    condition:
+        $header at 0
+}
 rule file_detect_magic_PYTHON_BYTE_COMPILED_2v7v{
     meta:
         author = "xCEVre"
@@ -90,6 +102,7 @@ rule file_detect_magic_PYTHON_BYTE_COMPILED_2v7v{
     condition:
         $header at 0
 }
+
 rule file_detect_magic_UNITY_LEVEL{
     meta:
         author = "xCEVre"
