@@ -19,6 +19,17 @@ rule file_detect_magic_RENPY_ARCHIVE{
     condition:
         $header at 0
 }
+rule file_detect_magic_RENPY_RPYMC{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-05"
+        severityLevel= "UNKNOWN"
+        description = "Detects '.rpymc' files(NO ZLIB)"
+    strings:
+        $header = { 52 45 4E 50 59 20 52 50 43 32 01 00 00 00 2E 00 00 00 }
+    condition:
+        $header at 0
+}
 rule file_detect_magic_RENPY_RPYM{
     meta:
         author = "xCEVre"
