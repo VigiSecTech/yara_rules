@@ -32,7 +32,18 @@ rule file_detect_magic_CRYPTO_PEM_CERTIFICATE{
     condition:
         any of them
 }
-
+rule file_detect_magic_CRYPTO_DH_PARAMETERS{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-05"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects files with DH PARAMETERS"
+    strings:
+        $start = { 2d 2d 2d 2d 2d 42 45 47  49 4e 20 44 48 20 50 41 52 41 4d 45 54 45 52 53  2d 2d 2d 2d 2d }
+        $end = { 2d 2d 2d 2d 2d 45 4e 44  20 44 48 20 50 41 52 41 4d 45 54 45 52 53 2d 2d  2d 2d 2d }
+    condition:
+        any of them
+}
 
 rule file_detect_magic_ELF{
     meta:
