@@ -11,12 +11,12 @@
 
 
 
-rule file_detect_magic_SO{
+rule file_detect_magic_ELF{
     meta:
         author = "xCEVre"
         date = "2025-04-05"
         severityLevel= "INFORMATIONAL"
-        description = "Detects '.so' files"
+        description = "Detects ELF files"
     strings:
         $header = { 7F 45 4C 46 }
     condition:
