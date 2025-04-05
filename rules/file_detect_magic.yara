@@ -9,6 +9,17 @@
 //	UNKNOWN       // Не известно.Используется для хранилищ (архивы и тд)
 
 
+rule file_detect_magic_CRYPTO_PEM_RSA_PRIVATE_KEY{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-05"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects (PEM RSA private key) files"
+    strings:
+        $header = { 2D 2D 2D 2D 2D 42 45 47 49 4E 20 52 53 41 20 50 52 49 56 41 54 45 20 4B 45 59 2D 2D 2D 2D 2D }
+    condition:
+        $header at 0
+}
 
 
 rule file_detect_magic_ELF{
