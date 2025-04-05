@@ -8,6 +8,26 @@
 //
 //	UNKNOWN       // Не известно.Используется для хранилищ (архивы и тд)
 
+
+
+
+rule file_detect_magic_SO{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-05"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects '.so' files"
+    strings:
+        $header = { 7F 45 4C 46 }
+    condition:
+        $header at 0
+}
+
+
+
+
+
+
 rule file_detect_magic_RENPY_ARCHIVE{
     meta:
         author = "xCEVre"
