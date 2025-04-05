@@ -517,6 +517,9 @@ rule file_detect_magic_ADOBE_COLOR_SWATCH {
         $header_version at 0 and $header_info and $swatch_bytes // Проверка заголовка и байтовой последовательности
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////// JAVA
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 rule file_detect_magic_JAVA_SER {
     meta:
         description = "Detects Java serialized object files of any version at the beginning of the file"
@@ -535,6 +538,43 @@ rule file_detect_magic_JAVA_SER {
     condition:
         any of them at 0
 }
+
+rule file_detect_magic_JAVA_CLASS {
+    meta:
+        description = "Detects Java class file"
+        author = "xCEVre"
+        date = "2025-04-05"
+
+    strings:
+        $magic = { CA FE BA BE 00 00 00 }
+
+    condition:
+        $magic at 0
+}
+rule file_detect_magic_JAVA_CLASS_v8 {
+    meta:
+        description = "Detects Java 1.8 class file"
+        author = "xCEVre"
+        date = "2025-04-05"
+
+    strings:
+        $magic = { CA FE BA BE 00 00 00 34 }
+    condition:
+        $magic at 0
+}
+rule file_detect_magic_JAVA_CLASS_v21 {
+    meta:
+        description = "Detects Java 21 class file"
+        author = "xCEVre"
+        date = "2025-04-05"
+    strings:
+        $magic = { CA FE BA BE 00 00 00 41 }
+    condition:
+        $magic at 0
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////// JAVA
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 rule file_detect_magic_MP3
 {
