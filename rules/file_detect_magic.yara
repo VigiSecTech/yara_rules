@@ -572,7 +572,7 @@ rule file_detect_magic_JAVA_CLASS_v21 {
     condition:
         $magic at 0
 }
-rule file_detect_magic_JAVA_CLASS_v21 {
+rule file_detect_magic_JAVA_CLASS_v23 {
     meta:
         description = "Detects Java 23 class file"
         author = "xCEVre"
