@@ -145,6 +145,17 @@ rule file_detect_magic_Targa{
     condition:
         any of them at 0
 }
+rule file_detect_magic_UNKNOWN_tab{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-12"
+        severityLevel= "UNKNOWN"
+        description = "Detects '.tab' files"
+    strings:
+        $magic = { 44 75 6D 6D 79 09 30 09 45 6D 70 74 79 0D 0A 49 44 }
+    condition:
+        any of them at 0
+}
 rule file_detect_magic_UNKNOWN_toc{
     meta:
         author = "xCEVre"
