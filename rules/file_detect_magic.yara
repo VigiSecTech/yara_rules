@@ -49,7 +49,7 @@ rule file_detect_magic_ELF{
     meta:
         author = "xCEVre"
         date = "2025-04-05"
-        severityLevel= "INFORMATIONAL"
+        severityLevel= "UNKNOWN"
         description = "Detects ELF files"
     strings:
         $header = { 7F 45 4C 46 }
@@ -59,7 +59,17 @@ rule file_detect_magic_ELF{
 
 
 
-
+rule file_detect_magic_SpaceRangersHD_Save{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects '.sav' files"
+    strings:
+        $header = { 52 00 53 00 47 00 00 00 76 00 31 00 36 00 37 00 00 00 }
+    condition:
+        $header at 0
+}
 
 
 rule file_detect_magic_RENPY_ARCHIVE{
