@@ -227,6 +227,18 @@ rule file_detect_magic_WINE_REG_V2{
         $header at 0
 }
 
+
+rule file_detect_magic_STEAM_Settings_manifest{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects steam file with extension '.manifest'  "
+    strings:
+        $header = { D0 17 F6 71 ?? ?? ?? 00 0A }
+    condition:
+        $header at 0
+}
 rule file_detect_magic_STEAM_Settings_menu{
     meta:
         author = "xCEVre"
