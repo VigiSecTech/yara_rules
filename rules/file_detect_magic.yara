@@ -346,6 +346,17 @@ rule file_detect_magic_UNKNOWN_1_dat{
     condition:
         any of them at 0
 }
+rule file_detect_magic_UNKNOWN_2_dat{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "UNKNOWN"
+        description = "Detects UNKNOWN files extension '.dat'"
+    strings:
+        $header_1 = { 44 00 00 00 ?? ?? 00 00 ?? ?? 00 00 ?? ?? 00 00 ?? ?? 00 00 ?? ?? 00 00 ?? ?? ?? 00 ?? ?? ?? 00 }
+    condition:
+        any of them at 0
+}
 rule file_detect_magic_UNKNOWN_1_bin{
     meta:
         author = "xCEVre"
