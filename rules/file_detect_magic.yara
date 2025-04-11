@@ -110,7 +110,7 @@ rule file_detect_magic_SpaceRangersHD_Save{
         $header at 0
 }
 
-rule file_detect_magic_UNKNOWN_mm{
+rule file_detect_magic_UNKNOWN_PaintShop_Pro_color_palette{
     meta:
         author = "xCEVre"
         date = "2025-04-12"
