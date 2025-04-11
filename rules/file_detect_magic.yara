@@ -118,11 +118,12 @@ rule file_detect_magic_MPEG_1_LAYER_3_MP3{
         author = "xCEVre"
         date = "2025-04-04"
         severityLevel= "INFORMATIONAL"
-        description = "Detects '.DS_Store' files"
+        description = "Detects '.mp3' files"
     strings:
-        $header_1 = { FF FB }
-        $header_2 = { FF F3 }
-        $header_3 = { FF F2 }
+        $header_ = { FF F3 C0 CC 00 }
+        $header_ = { FF F3 C8 C4 00 }
+        $header_ = { FF FB 90 C4 00 }
+        $header_ = { FF FB B0 44 00 }
     condition:
         any of them at 0
 }
@@ -1101,7 +1102,7 @@ rule file_detect_magic_XZ {
     meta:
         author = "xCEVre"
         description = "Detects XZ compressed files by their magic bytes"
-
+        severityLevel= "ARCHIVE"
     strings:
         $header = { FD 37 7A 58 5A 00 }
 
@@ -1113,7 +1114,7 @@ rule file_detect_magic_LZ4 {
     meta:
         author = "xCEVre"
         description = "Detects LZ4 compressed files by their magic bytes"
-
+        severityLevel= "ARCHIVE"
     strings:
         $header = { 04 22 4D 18 }
 
@@ -1224,6 +1225,7 @@ rule file_detect_magic_ZIP{
         author = "xCEVre"
         description = "Detects files that contain the ZIP magic number (PK..)"  // Описание правила
         date = "2025-04-01"
+        severityLevel= "ARCHIVE"
 
     strings:
         $zip_magic = { 50 4B 03 04 }
