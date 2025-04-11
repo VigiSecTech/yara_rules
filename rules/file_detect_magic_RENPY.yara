@@ -20,17 +20,7 @@ rule file_detect_magic_RENPY_RPYMC{
     condition:
         $header at 0
 }
-rule file_detect_magic_RENPY_RPYM{
-    meta:
-        author = "xCEVre"
-        date = "2025-04-05"
-        severityLevel= "UNKNOWN"
-        description = "Detects '.rpym' files"
-    strings:
-        $header = { EF BB BF }
-    condition:
-        $header at 0
-}
+
 
 rule file_detect_magic_RENPY_ARCHIVE{
     meta:
