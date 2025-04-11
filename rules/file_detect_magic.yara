@@ -8,6 +8,19 @@
 //
 //	UNKNOWN       // Не известно.Используется для хранилищ (архивы и тд)
 
+
+rule file_detect_magic_SHEBANG_ENV_BASH{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "LOW"
+        description = "Detects 'Bourne-Again shell script' files"
+    strings:
+        $header = { 23 21 2F 75 73 72 2F 62 69 6E 2F 65 6E 76 20 62 61 73 68 } // '#!/usr/bin/env bash'
+    condition:
+        $header at 0
+}
+
 rule file_detect_magic_SVG{
     meta:
         author = "xCEVre"
