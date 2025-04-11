@@ -180,6 +180,19 @@ rule file_detect_magic_UNITY_resource{
         $header at 0
 }
 
+
+rule file_detect_magic_UNKNOWN_ZERO_0{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-03"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects UNKNOWN files regex '[a-z0-9]+_0' "
+    strings:
+        $header = { 30 5C 72 A7 1B 6D FB FC 05 00 00 00 }
+    condition:
+        $header at 0
+}
+
 rule file_detect_magic_UNKNOWN_PAK_1{
     meta:
         author = "xCEVre"
