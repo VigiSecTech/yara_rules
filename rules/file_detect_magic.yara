@@ -261,6 +261,17 @@ rule file_detect_magic_UNKNOWN_1_dat{
     condition:
         any of them at 0
 }
+rule file_detect_magic_UNKNOWN_1_bin{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "UNKNOWN"
+        description = "Detects UNKNOWN files extension '.bin'"
+    strings:
+        $header_1 = { 00 63 61 63 68 65 00 02 63 72 63 00 }
+    condition:
+        any of them at 0
+}
 rule file_detect_magic_UNKNOWN_foz{
     meta:
         author = "xCEVre"
