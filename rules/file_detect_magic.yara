@@ -132,17 +132,7 @@ rule file_detect_magic_PaintShop_Pro_color_palette{
     condition:
         any of them at 0
 }
-rule file_detect_magic_UNKNOWN_slp{
-    meta:
-        author = "xCEVre"
-        date = "2025-04-12"
-        severityLevel= "UNKNOWN"
-        description = "Detects '.slp' files"
-    strings:
-        $magic = { 32 2E 30 4E }
-    condition:
-        any of them at 0
-}
+
 rule file_detect_magic_Targa{
     meta:
         author = "xCEVre"
@@ -152,6 +142,28 @@ rule file_detect_magic_Targa{
     strings:
         $magic_1 = { 00 00 02 00 00 00 00 00 00 00 00 00 }
         $magic_2 = { 00 00 0A 00 00 00 00 00 00 00 00 00 }
+    condition:
+        any of them at 0
+}
+rule file_detect_magic_UNKNOWN_toc{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-12"
+        severityLevel= "UNKNOWN"
+        description = "Detects '.toc' files"
+    strings:
+        $magic = { 43 44 56 4E 00 00 03 00 }
+    condition:
+        any of them at 0
+}
+rule file_detect_magic_UNKNOWN_slp{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-12"
+        severityLevel= "UNKNOWN"
+        description = "Detects '.slp' files"
+    strings:
+        $magic = { 32 2E 30 4E }
     condition:
         any of them at 0
 }
