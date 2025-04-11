@@ -225,8 +225,18 @@ rule file_detect_magic_STEAM_AppState_acf{
         $header at 0
 }
 
-
-rule file_detect_magic_Window_Setup_INFormation{
+rule file_detect_magic_MS_Windows_Icon_Resource{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects 'MS Windows icon resource' files extension '.ico'"
+    strings:
+        $header = { 00 00 01 00 ?? 00 ?? ?? ?? 00 01 00 ?? }
+    condition:
+        any of them at 0
+}
+rule file_detect_magic_MS_Window_Setup_INFormation{
     meta:
         author = "xCEVre"
         date = "2025-04-11"
