@@ -112,6 +112,17 @@ rule file_detect_magic_SpaceRangersHD_Save{
 
 
 
+rule file_detect_magic_UNKNOWN_cp1{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-04"
+        severityLevel= "UNKNOWN"
+        description = "Detects '.cp1' files"
+    strings:
+        $magic = { 31 2E 30 30 31 43 41 4D }
+    condition:
+        any of them at 0
+}
 
 rule file_detect_magic_MPEG_1_LAYER_3_MP3{
     meta:
