@@ -110,6 +110,19 @@ rule file_detect_magic_SpaceRangersHD_Save{
         $header at 0
 }
 
+
+rule file_detect_magic_UNKNOWN_mm{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "UNKNOWN"
+        description = "Detects '' ''.mm' files"
+    strings:
+        $magic = { 49 44 20 20 ?? ?? ?? ?? ?? 20 ?? ?? 20 20 20 ?? ?? 20 20 20 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? }
+    condition:
+        any of them at 0
+}
+
 rule file_detect_magic_UNKNOWN_DRS{
     meta:
         author = "xCEVre"
