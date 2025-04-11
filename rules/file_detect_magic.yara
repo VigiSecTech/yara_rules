@@ -226,6 +226,19 @@ rule file_detect_magic_STEAM_AppState_acf{
 }
 
 
+rule file_detect_magic_Window_Setup_INFormation{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects 'Windows setup INFormation' files extension '.inf'"
+    strings:
+        $header_0 = { 5B 56 65 72 73 69 6F 6E 5D 0A 53 69 67 6E 61 74 75 72 65 3D 22 24 43 48 49 43 41 47 4F 24 22 } // [Version] \n Signature="$CHICAGO$"
+        $header_1 = { 5B 56 65 72 73 69 6F 6E 5D 0A 53 69 67 6E 61 74 75 72 65 3D 22 24 43 48 49 43 41 47 4F 24 22 0A 43 6C 61 73 73 47 75 69 64 3D 7B } // [Version] \n Signature="$CHICAGO$" \n ClassGuid={
+    condition:
+        any of them at 0
+}
+
 
 rule file_detect_magic_UNKNOWN_1_dat{
     meta:
