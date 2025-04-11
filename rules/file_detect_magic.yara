@@ -110,7 +110,18 @@ rule file_detect_magic_SpaceRangersHD_Save{
         $header at 0
 }
 
-rule file_detect_magic_UNKNOWN_PaintShop_Pro_color_palette{
+rule file_detect_magic_Composite_Document_File_V2{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-12"
+        severityLevel= "UNKNOWN"
+        description = "Detects 'Composite Document File V2 Document' '.s14' files"
+    strings:
+        $magic = { D0 CF 11 E0 A1 B1 1A E1 }
+    condition:
+        any of them at 0
+}
+rule file_detect_magic_PaintShop_Pro_color_palette{
     meta:
         author = "xCEVre"
         date = "2025-04-12"
