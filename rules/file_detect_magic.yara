@@ -143,6 +143,18 @@ rule file_detect_magic_UNKNOWN_slp{
     condition:
         any of them at 0
 }
+rule file_detect_magic_Targa{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-12"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects 'Targa image data' '.tga' files"
+    strings:
+        $magic_1 = { 00 00 02 00 00 00 00 00 00 00 00 00 }
+        $magic_2 = { 00 00 0A 00 00 00 00 00 00 00 00 00 }
+    condition:
+        any of them at 0
+}
 rule file_detect_magic_UNKNOWN_mm{
     meta:
         author = "xCEVre"
