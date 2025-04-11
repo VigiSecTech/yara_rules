@@ -237,6 +237,7 @@ rule file_detect_magic_UNKNOWN_ZeroS{
     strings:
         $ext_s = { 30 5C 72 A7 1B 6D FB FC 09 00 00 00 }
         $ext_0 = { 30 5C 72 A7 1B 6D FB FC 05 00 00 00 }
+        $ext_any = { 30 5C 72 A7 1B 6D FB FC ?? 00 00 00 }
     condition:
         any of them at 0
 }
