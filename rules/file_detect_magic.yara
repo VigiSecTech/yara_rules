@@ -8,6 +8,18 @@
 //
 //	UNKNOWN       // Не известно.Используется для хранилищ (архивы и тд)
 
+rule file_detect_magic_SVG{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects 'SVG Scalable Vector Graphics image' files"
+    strings:
+        $header = { 3C 73 76 67 20 ?? ?? ?? ?? ?? }
+    condition:
+        $header at 0
+}
+
 
 rule file_detect_magic_CRYPTO_PEM_RSA_PRIVATE_KEY{
     meta:
