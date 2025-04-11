@@ -180,6 +180,17 @@ rule file_detect_magic_UNKNOWN_slp{
     condition:
         any of them at 0
 }
+rule file_detect_magic_UNKNOWN_ted{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-12"
+        severityLevel= "UNKNOWN"
+        description = "Detects '.ted' files"
+    strings:
+        $magic = { 00 00 00 00 ?? 00 00 00 00 04 01 02 00 00 01 04 ?? 00 00 00 02 04 ?? 00 00 00 03 04 ?? 00 00 00 }
+    condition:
+        any of them at 0
+}
 rule file_detect_magic_UNKNOWN_mm{
     meta:
         author = "xCEVre"
