@@ -231,13 +231,25 @@ rule file_detect_magic_UNKNOWN_STEAM_F{
     meta:
         author = "xCEVre"
         date = "2025-04-11"
-        severityLevel= "INFORMATIONAL"
+        severityLevel= "UNKNOWN"
         description = "Detects steam file regex 'f_[0-9]+'  "
     strings:
         $header = { 0C 00 00 00 42 50 4C 47 }
     condition:
         $header at 0
 }
+rule file_detect_magic_UNKNOWN_STEAM_DATA_X{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "UNKNOWN"
+        description = "Detects steam file regex 'data_[0-9]+'  "
+    strings:
+        $header = { C3 CA 04 C1 00 00 02 00 }
+    condition:
+        $header at 0
+}
+
 rule file_detect_magic_STEAM_Settings_manifest{
     meta:
         author = "xCEVre"
