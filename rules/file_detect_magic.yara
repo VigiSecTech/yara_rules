@@ -163,7 +163,9 @@ rule file_detect_magic_UNKNOWN_toc{
         severityLevel= "UNKNOWN"
         description = "Detects '.toc' files"
     strings:
-        $magic = { 43 44 56 4E 00 00 03 00 }
+        $magic_any =	{ 43 44 56 4E 00 00 ?? 00 }
+        $magic_3 =		{ 43 44 56 4E 00 00 03 00 }
+        $magic_4 =		{ 43 44 56 4E 00 00 04 00 }
     condition:
         any of them at 0
 }
