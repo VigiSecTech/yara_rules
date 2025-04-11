@@ -6,14 +6,15 @@
 //	HIGH,          // Значительный риск
 //	CRITICAL       // Критическая угроза
 //
-//	UNKNOWN       // Не известно.Используется для хранилищ (архивы и тд)
+//	ARCHIVE       // Используется для хранилищ (архивы и тд)
+//	UNKNOWN       // Не известно
 
 
 rule file_detect_magic_archive_FreeArc{
     meta:
         author = "xCEVre"
         date = "2025-04-11"
-        severityLevel= "UNKNOWN"
+        severityLevel= "ARCHIVE"
         description = "Detects 'FreeArc archive <http://freearc.org>' files"
     strings:
         $magic_tiny = { 41 72 43 01 }
@@ -110,50 +111,6 @@ rule file_detect_magic_SpaceRangersHD_Save{
 }
 
 
-rule file_detect_magic_RENPY_ARCHIVE{
-    meta:
-        author = "xCEVre"
-        date = "2025-04-04"
-        severityLevel= "UNKNOWN"
-        description = "Detects '.rpa' files"
-    strings:
-        $header = { 52 50 41 2D 33 2E 30 20 30 30 30 30 30 30 30 30 }
-    condition:
-        $header at 0
-}
-rule file_detect_magic_RENPY_RPYMC{
-    meta:
-        author = "xCEVre"
-        date = "2025-04-05"
-        severityLevel= "UNKNOWN"
-        description = "Detects '.rpymc' files(NO ZLIB)"
-    strings:
-        $header = { 52 45 4E 50 59 20 52 50 43 32 01 00 00 00 2E 00 00 00 }
-    condition:
-        $header at 0
-}
-rule file_detect_magic_RENPY_RPYM{
-    meta:
-        author = "xCEVre"
-        date = "2025-04-05"
-        severityLevel= "UNKNOWN"
-        description = "Detects '.rpym' files"
-    strings:
-        $header = { EF BB BF }
-    condition:
-        $header at 0
-}
-rule file_detect_magic_RENPY_RPYC{
-    meta:
-        author = "xCEVre"
-        date = "2025-04-04"
-        severityLevel= "UNKNOWN"
-        description = "Detects '.rpyc' files"
-    strings:
-        $header = { 52 45 4E 50 59 20 52 50 43 32 01 00 00 00 2E 00 00 00 }
-    condition:
-        $header at 0
-}
 
 
 rule file_detect_magic_MPEG_1_LAYER_3_MP3{
@@ -420,7 +377,7 @@ rule file_detect_magic_UNKNOWN_IMAGE_CONTAINER_1 {
         author = "xCEVre"
         date = "2025-04-01"
         description = "Обнаружение контейнера неизвестного типа(FIXME НАЙТИ И ДОПОЛНИТЬ) с изображениями"
-		severityLevel= "UNKNOWN"
+		severityLevel= "ARCHIVE"
     strings:
         $header_1 = { 00 00 00 00 01 00 ?? ?? ?? 00  }
         $header_2 = { 00 00 00 00 01 00 ?? ?? ?? 00 ?? ?? ?? 00 00 00 ?? 00 00 ?? ?? 00 00 ?? ?? 00 00 01 ?? ?? ?? ?? ?? 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? }
@@ -433,7 +390,7 @@ rule file_detect_magic_UNKNOWN_IMAGE_CONTAINER_1_pak {
         author = "xCEVre"
         date = "2025-04-01"
         description = "Обнаружение контейнера неизвестного типа(FIXME НАЙТИ И ДОПОЛНИТЬ) с изображениями,расширение .pak"
-		severityLevel= "UNKNOWN"
+		severityLevel= "ARCHIVE"
     strings:
         $header = { 05 00 00 00 01 00 00 00 ?? ?? ?? 00 ?? ?? ?? ?? 00 00 ?? ?? ?? ?? 00 00 ?? ?? ?? ?? ?? 00 ?? ?? }
     condition:
