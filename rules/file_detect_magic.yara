@@ -110,7 +110,17 @@ rule file_detect_magic_SpaceRangersHD_Save{
         $header at 0
 }
 
-
+rule file_detect_magic_UNKNOWN_DRS{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "UNKNOWN"
+        description = "Detects '.DRS' files"
+    strings:
+        $magic = { 43 6F 70 79 72 69 67 68 74 20 28 63 29 20 32 30 30 31 20 4C 75 63 61 73 41 72 74 73 20 45 6E 74 65 72 74 61 69 6E 6D 65 6E 74 20 43 6F 6D 70 61 6E 79 20 4C 4C 43 1A 00 00 00 00 00 31 2E 30 30 73 77 62 67 00 00 00 00 00 00 00 00  }
+    condition:
+        any of them at 0
+}
 rule file_detect_magic_UNKNOWN_CPX{
     meta:
         author = "xCEVre"
