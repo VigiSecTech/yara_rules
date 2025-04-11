@@ -180,7 +180,17 @@ rule file_detect_magic_UNITY_resource{
         $header at 0
 }
 
-
+rule file_detect_magic_STEAM_AppState{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects steam file starts with \"AppState\"  "
+    strings:
+        $header = { 22 41 70 70 53 74 61 74 65 22 0A 7B 0A 09 22 61 70 70 69 64 22 09 09 22 }
+    condition:
+        $header at 0
+}
 rule file_detect_magic_UNKNOWN_ZERO_0_1{
     meta:
         author = "xCEVre"
