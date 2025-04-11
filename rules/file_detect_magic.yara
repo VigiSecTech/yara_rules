@@ -227,12 +227,23 @@ rule file_detect_magic_STEAM_AppState_acf{
 
 
 
+rule file_detect_magic_UNKNOWN_1_dat{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "UNKNOWN"
+        description = "Detects UNKNOWN files extension '.dat'"
+    strings:
+        $header_1 = { 53 54 52 47 01 00 00 00 5A }
+    condition:
+        any of them at 0
+}
 
 rule file_detect_magic_UNKNOWN_ZeroS{
     meta:
         author = "xCEVre"
         date = "2025-04-11"
-        severityLevel= "INFORMATIONAL"
+        severityLevel= "UNKNOWN"
         description = "Detects UNKNOWN files regex '[a-z0-9]+_(s|0)'"
     strings:
         $ext_s = { 30 5C 72 A7 1B 6D FB FC 09 00 00 00 }
@@ -246,7 +257,7 @@ rule file_detect_magic_UNKNOWN_PAK_1{
     meta:
         author = "xCEVre"
         date = "2025-04-03"
-        severityLevel= "INFORMATIONAL"
+        severityLevel= "UNKNOWN"
         description = "Detects UNKNOWN files with extension '.pak' "
     strings:
         $header = { 05 00 00 00 01 00 00 00 }
