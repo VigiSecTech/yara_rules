@@ -184,7 +184,7 @@ rule file_detect_magic_UNITY_resource{
 rule file_detect_magic_UNKNOWN_ZERO_0{
     meta:
         author = "xCEVre"
-        date = "2025-04-03"
+        date = "2025-04-11"
         severityLevel= "INFORMATIONAL"
         description = "Detects UNKNOWN files regex '[a-z0-9]+_0' "
     strings:
