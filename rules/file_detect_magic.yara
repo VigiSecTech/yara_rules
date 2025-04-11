@@ -132,7 +132,17 @@ rule file_detect_magic_PaintShop_Pro_color_palette{
     condition:
         any of them at 0
 }
-
+rule file_detect_magic_UNKNOWN_slp{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-12"
+        severityLevel= "UNKNOWN"
+        description = "Detects '.slp' files"
+    strings:
+        $magic = { 32 2E 30 4E }
+    condition:
+        any of them at 0
+}
 rule file_detect_magic_UNKNOWN_mm{
     meta:
         author = "xCEVre"
