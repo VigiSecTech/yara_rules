@@ -261,6 +261,17 @@ rule file_detect_magic_UNKNOWN_1_dat{
     condition:
         any of them at 0
 }
+rule file_detect_magic_UNKNOWN_foz{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "UNKNOWN"
+        description = "Detects UNKNOWN files extension '.foz'"
+    strings:
+        $header_1 = { 81 46 4F 53 53 49 4C 49 5A 45 44 42 00 00 00 06 }
+    condition:
+        any of them at 0
+}
 
 rule file_detect_magic_UNKNOWN_ZeroS{
     meta:
