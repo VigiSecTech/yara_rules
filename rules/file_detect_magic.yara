@@ -317,7 +317,8 @@ rule file_detect_magic_MS_Windows_Icon_Resource{
         severityLevel= "INFORMATIONAL"
         description = "Detects 'MS Windows icon resource' files extension '.ico'"
     strings:
-        $header = { 00 00 01 00 ?? 00 ?? ?? ?? 00 01 00 ?? }
+        $header_1 = { 00 00 01 00 ?? 00 ?? ?? ?? 00 01 00 ?? }
+        $header_2 = { 00 00 01 00 ?? 00 ?? ?? ?? 00 ?? 00 ?? }
     condition:
         any of them at 0
 }
