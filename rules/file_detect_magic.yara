@@ -180,12 +180,24 @@ rule file_detect_magic_UNITY_resource{
         $header at 0
 }
 
-rule file_detect_magic_STEAM_AppState{
+rule file_detect_magic_WINE_REG_V2{
     meta:
         author = "xCEVre"
         date = "2025-04-11"
         severityLevel= "INFORMATIONAL"
-        description = "Detects steam file starts with \"AppState\"  "
+        description = "Detects steam file with extension '.reg'"
+    strings:
+        $header = { 57 49 4E 45 20 52 45 47 49 53 54 52 59 20 56 65 72 73 69 6F 6E 20 32 }
+    condition:
+        $header at 0
+}
+
+rule file_detect_magic_STEAM_AppState_acf{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects steam file starts with \"AppState\" and extension '.acf'  "
     strings:
         $header = { 22 41 70 70 53 74 61 74 65 22 0A 7B 0A 09 22 61 70 70 69 64 22 09 09 22 }
     condition:
