@@ -514,6 +514,7 @@ rule file_detect_magic_HTML {
         severityLevel= "INFORMATIONAL"
 
     strings:
+        $tab_html_tag = { ?? 3C 68 74 6D 6C 3E }
         $doctype = "<!DOCTYPE" nocase wide ascii
         $html_tag = "<html" nocase wide ascii
     condition:
