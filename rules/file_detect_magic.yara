@@ -227,7 +227,17 @@ rule file_detect_magic_WINE_REG_V2{
         $header at 0
 }
 
-
+rule file_detect_magic_UNKNOWN_STEAM_F{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects steam file regex 'f_[0-9]+'  "
+    strings:
+        $header = { 0C 00 00 00 42 50 4C 47 }
+    condition:
+        $header at 0
+}
 rule file_detect_magic_STEAM_Settings_manifest{
     meta:
         author = "xCEVre"
