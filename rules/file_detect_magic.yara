@@ -110,13 +110,24 @@ rule file_detect_magic_SpaceRangersHD_Save{
         $header at 0
 }
 
+rule file_detect_magic_UNKNOWN_mm{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-12"
+        severityLevel= "UNKNOWN"
+        description = "Detects 'PaintShop Pro color palette' '.pal' files"
+    strings:
+        $magic = { 4A 41 53 43 2D 50 41 4C 0D 0A 30 31 30 30 0D 0A 32 35 36 0D 0A }
+    condition:
+        any of them at 0
+}
 
 rule file_detect_magic_UNKNOWN_mm{
     meta:
         author = "xCEVre"
         date = "2025-04-11"
         severityLevel= "UNKNOWN"
-        description = "Detects '' ''.mm' files"
+        description = "Detects '.mm' files"
     strings:
         $magic = { 49 44 20 20 ?? ?? ?? ?? ?? 20 ?? ?? 20 20 20 ?? ?? 20 20 20 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? }
     condition:
