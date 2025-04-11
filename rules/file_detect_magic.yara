@@ -185,13 +185,24 @@ rule file_detect_magic_WINE_REG_V2{
         author = "xCEVre"
         date = "2025-04-11"
         severityLevel= "INFORMATIONAL"
-        description = "Detects steam file with extension '.reg'"
+        description = "Detects wine registry file with extension '.reg'"
     strings:
         $header = { 57 49 4E 45 20 52 45 47 49 53 54 52 59 20 56 65 72 73 69 6F 6E 20 32 }
     condition:
         $header at 0
 }
 
+rule file_detect_magic_STEAM_Settings_menu{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects steam file with extension '.menu'  "
+    strings:
+        $header = { 22 6D 65 6E 75 62 61 72 22 0D 0A 7B 0D 0A 09 }
+    condition:
+        $header at 0
+}
 rule file_detect_magic_STEAM_AppState_acf{
     meta:
         author = "xCEVre"
