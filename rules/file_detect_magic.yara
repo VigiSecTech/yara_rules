@@ -181,7 +181,7 @@ rule file_detect_magic_UNITY_resource{
 }
 
 
-rule file_detect_magic_UNKNOWN_ZERO_0{
+rule file_detect_magic_UNKNOWN_ZERO_0_1{
     meta:
         author = "xCEVre"
         date = "2025-04-11"
@@ -189,6 +189,17 @@ rule file_detect_magic_UNKNOWN_ZERO_0{
         description = "Detects UNKNOWN files regex '[a-z0-9]+_0' "
     strings:
         $header = { 30 5C 72 A7 1B 6D FB FC 05 00 00 00 }
+    condition:
+        $header at 0
+}
+rule file_detect_magic_UNKNOWN_ZERO_0_2{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects UNKNOWN files regex '[a-z0-9]+_0' ,file output:Apple HFS Plus Extended version"
+    strings:
+        $header = { 30 5C 72 A7 1B 6D FB FC 05 00 00 00 5B 00 00 00 }
     condition:
         $header at 0
 }
