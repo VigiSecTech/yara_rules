@@ -9,6 +9,19 @@
 //	UNKNOWN       // Не известно.Используется для хранилищ (архивы и тд)
 
 
+rule file_detect_magic_archive_FreeArc{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "UNKNOWN"
+        description = "Detects 'FreeArc archive <http://freearc.org>' files"
+    strings:
+        $magic_tiny = { 41 72 43 01 }
+        $magic_huge = { 41 72 43 01 00 00 06 07 41 72 43 01 02 73 74 6F 72 69 6E 67 00 10 10 11 55 33 BC 10 12 71 82 44 48 28 EE 1F }
+    condition:
+        any of them at 0
+}
+
 rule file_detect_magic_SHEBANG_ENV_BASH{
     meta:
         author = "xCEVre"
