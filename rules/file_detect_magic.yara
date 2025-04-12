@@ -22,7 +22,17 @@ rule file_detect_magic_archive_FreeArc{
     condition:
         any of them at 0
 }
-
+rule file_detect_magic_SHEBANG_PERL{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "LOW"
+        description = "Detects 'Perl script text executable"
+    strings:
+        $header_1 = { 23 21 2F 75 73 72 2F 62 69 6E 2F 70 65 72 6C }	// '#!/usr/bin/perl'
+    condition:
+        any of them at 0
+}
 rule file_detect_magic_SHEBANG_SH{
     meta:
         author = "xCEVre"
