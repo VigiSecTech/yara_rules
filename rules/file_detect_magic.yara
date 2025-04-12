@@ -93,6 +93,21 @@ rule file_detect_magic_SVG{
 }
 
 
+rule file_detect_magic_xpm{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-12"
+        severityLevel= "INFORMATIONAL"
+        description = "Detects 'X pixmap image text' '.xpm' files"
+    strings:
+        $header = { 2F 2A 20 58 50 4D 20 2A 2F 0A 73 74 61 74 69 63 20 63 68 61 72 20 2A 20 }
+    condition:
+        $header at 0
+}
+
+
+
+
 rule file_detect_magic_CRYPTO_PEM_RSA_PRIVATE_KEY{
     meta:
         author = "xCEVre"
