@@ -230,6 +230,23 @@ rule file_detect_magic_UNKNOWN_toc{
     condition:
         any of them at 0
 }
+
+
+
+rule file_detect_magic_UNKNOWN_mhr{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-12"
+        severityLevel= "UNKNOWN"
+        description = "Detects '.mhr' files"
+    strings:
+        $magic = { 4D 69 6E 50 48 52 30 32 }
+    condition:
+        any of them at 0
+}
+
+
+
 rule file_detect_magic_UNKNOWN_slp{
     meta:
         author = "xCEVre"
