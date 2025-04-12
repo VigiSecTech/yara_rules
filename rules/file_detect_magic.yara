@@ -23,6 +23,17 @@ rule file_detect_magic_archive_FreeArc{
         any of them at 0
 }
 
+rule file_detect_magic_SHEBANG_SH{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "LOW"
+        description = "Detects 'POSIX shell script' files"
+    strings:
+        $header = { 23 21 2F 62 69 6E 2F 73 68 } // '#!/bin/sh'
+    condition:
+        $header at 0
+}
 rule file_detect_magic_SHEBANG_ENV_BASH{
     meta:
         author = "xCEVre"
