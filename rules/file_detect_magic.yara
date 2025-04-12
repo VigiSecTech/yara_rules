@@ -30,9 +30,10 @@ rule file_detect_magic_SHEBANG_SH{
         severityLevel= "LOW"
         description = "Detects 'POSIX shell script' files"
     strings:
-        $header = { 23 21 2F 62 69 6E 2F 73 68 } // '#!/bin/sh'
+        $header_1 = { 23 21 2F    62 69 6E 2F 73 68 }	// '#!/bin/sh'
+        $header_2 = { 23 21 20 2F 62 69 6E 2F 73 68 }	// '#! /bin/sh'
     condition:
-        $header at 0
+        any of them at 0
 }
 rule file_detect_magic_SHEBANG_ENV_BASH{
     meta:
