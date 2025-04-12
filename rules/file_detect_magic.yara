@@ -34,6 +34,17 @@ rule file_detect_magic_SHEBANG_ENV_BASH{
     condition:
         $header at 0
 }
+rule file_detect_magic_SHEBANG_python{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "LOW"
+        description = "Detects 'Python script' files"
+    strings:
+        $header = { 23 21 2F 75 73 72 2F 62 69 6E 2F 70 79 74 68 6F 6E } // '#!/usr/bin/python'
+    condition:
+        $header at 0
+}
 
 rule file_detect_magic_SVG{
     meta:
