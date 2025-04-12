@@ -41,9 +41,10 @@ rule file_detect_magic_SHEBANG_python{
         severityLevel= "LOW"
         description = "Detects 'Python script' files"
     strings:
-        $header = { 23 21 2F 75 73 72 2F 62 69 6E 2F 70 79 74 68 6F 6E } // '#!/usr/bin/python'
+        $header_1 = { 23 21 2F 75 73 72 2F 62 69 6E 2F 70 79 74 68 6F 6E } 	// '#!/usr/bin/python'
+        $header_2 = { 23 21 20 2F 75 73 72 2F 62 69 6E 2F 70 79 74 68 6F 6E } // '#! /usr/bin/python'
     condition:
-        $header at 0
+        any of them at 0
 }
 
 rule file_detect_magic_SVG{
