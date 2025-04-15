@@ -600,17 +600,7 @@ rule file_detect_magic_UNKNOWN_IMAGE_CONTAINER_1 {
         any of them at 0
 }
 
-rule file_detect_magic_UNKNOWN_IMAGE_CONTAINER_1_pak {
-    meta:
-        author = "xCEVre"
-        date = "2025-04-01"
-        description = "Обнаружение контейнера неизвестного типа(FIXME НАЙТИ И ДОПОЛНИТЬ) с изображениями,расширение .pak"
-		severityLevel= "ARCHIVE"
-    strings:
-        $header = { 05 00 00 00 01 00 00 00 ?? ?? ?? 00 ?? ?? ?? ?? 00 00 ?? ?? ?? ?? 00 00 ?? ?? ?? ?? ?? 00 ?? ?? }
-    condition:
-        $header at 0
-}
+
 
 rule file_detect_magic_UNKNOWN_ADS_DATA_kva {
     meta:
