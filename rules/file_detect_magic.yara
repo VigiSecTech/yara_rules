@@ -486,12 +486,12 @@ rule file_detect_magic_UNKNOWN_ZeroS{
         any of them at 0
 }
 
-rule file_detect_magic_UNKNOWN_PAK_1{
+rule file_detect_magic_CHROMIUM_LOCALE_PACK{
     meta:
         author = "xCEVre"
         date = "2025-04-03"
         severityLevel= "UNKNOWN"
-        description = "Detects UNKNOWN files with extension '.pak' "
+        description = "Detectsfiles with extension '.pak' "
     strings:
         $header = { 05 00 00 00 01 00 00 00 }
     condition:
