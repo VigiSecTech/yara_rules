@@ -472,19 +472,6 @@ rule file_detect_magic_UNKNOWN_foz{
         any of them at 0
 }
 
-rule file_detect_magic_UNKNOWN_ZeroS{
-    meta:
-        author = "xCEVre"
-        date = "2025-04-11"
-        severityLevel= "UNKNOWN"
-        description = "Detects UNKNOWN files regex '[a-z0-9]+_(s|0)'"
-    strings:
-        $ext_s = { 30 5C 72 A7 1B 6D FB FC 09 00 00 00 }
-        $ext_0 = { 30 5C 72 A7 1B 6D FB FC 05 00 00 00 }
-        $ext_any = { 30 5C 72 A7 1B 6D FB FC ?? 00 00 00 }
-    condition:
-        any of them at 0
-}
 
 rule file_detect_magic_CHROMIUM_LOCALE_PACK{
     meta:
