@@ -21,17 +21,7 @@ rule file_detect_magic_VALVE_STEAM_UNKNOWN_F{
     condition:
         $header at 0
 }
-rule file_detect_magic_VALVE_STEAM_UNKNOWN_DATA_X{
-    meta:
-        author = "xCEVre"
-        date = "2025-04-11"
-        severityLevel= "UNKNOWN"
-        description = "Detects steam file regex 'data_[0-9]+'"
-    strings:
-        $header = { C3 CA 04 C1 00 00 02 00 }
-    condition:
-        $header at 0
-}
+
 rule file_detect_magic_VALVE_STEAM_UNKNOWN_X_pbuf{
     meta:
         author = "xCEVre"

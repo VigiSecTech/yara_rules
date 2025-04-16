@@ -25,3 +25,14 @@ rule detect_chromium_v8cache {
         any of them at 0
 }
 
+rule file_detect_magic_chromium_graphics_cache{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-11"
+        severityLevel= "UNKNOWN"
+        description = "Detects Chromium/CEF graphics pipeline cache files (WebGPU, Skia, ShaderCache, Dawn)"
+    strings:
+        $header = { C3 CA 04 C1 00 00 02 00 }
+    condition:
+        $header at 0
+}
