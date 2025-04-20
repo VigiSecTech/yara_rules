@@ -11,7 +11,7 @@ rule file_detect_magic_Chromium_ResourcePack_pak {
 }
 
 
-rule detect_chromium_v8cache {
+rule file_detect_magic_Chromium_v8cache {
     meta:
         author = "xCEVre"
         date = "2025-04-11"
