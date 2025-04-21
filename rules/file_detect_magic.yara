@@ -309,6 +309,18 @@ rule file_detect_magic_MPEG_1_LAYER_3_MP3{
     condition:
         any of them
 }
+rule file_detect_magic_BMU_WRAPPED_MP3 {
+    meta:
+        author = "xCEVre"
+        date = "2025-04-21"
+        description = "Detects BMU-wrapped MP3 files"
+        format = "BMU V1.0 + MP3"
+    strings:
+        $bmu_header = "BMU V1.0"
+        $mp3_header = { FF FB ?? ?? 00 00 }
+    condition:
+        $bmu_header at 0 and $mp3_header at 9
+}
 
 rule file_detect_magic_APPLE_DESKTOP_SERVICES_STORE{
     meta:
