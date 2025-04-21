@@ -5,14 +5,7 @@ rule file_detect_magic_JAVA_SER {
         date = "2025-04-01"
 
     strings:
-        $version_1 = { AC ED 00 01 } // Версия 1
-        $version_2 = { AC ED 00 02 } // Версия 2
-        $version_3 = { AC ED 00 03 } // Версия 3
-        $version_4 = { AC ED 00 04 } // Версия 4
-        $version_5 = { AC ED 00 05 } // Версия 5 (самая распространенная)
-        $version_6 = { AC ED 00 06 } // Версия 6
-        $version_7 = { AC ED 00 07 } // Версия 7
-
+        $version_5 = { AC ED 00 05 } // Версия 5
     condition:
         any of them at 0
 }
