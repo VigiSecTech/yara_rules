@@ -301,11 +301,11 @@ rule file_detect_magic_MPEG_1_LAYER_3_MP3{
         severityLevel= "INFORMATIONAL"
         description = "Detects '.mp3' files"
     strings:
-        $header_1 = { FF F3 C0 CC 00 00 }
-        $header_2 = { FF F3 C8 C4 00 00 }
-        $header_3 = { FF FB 90 C4 00 00 }
-        $header_4 = { FF FB B0 44 00 00 }
-        $header_any = { FF FB ?? ?? 00 00 }
+        $header_1 = { FF F3 C0 CC 00 }
+        $header_2 = { FF F3 C8 C4 00 }
+        $header_3 = { FF FB 90 C4 00 }
+        $header_4 = { FF FB B0 44 00 }
+        $header_any = { FF FB ?? ?? 00 }
     condition:
         any of them
 }
@@ -317,7 +317,7 @@ rule file_detect_magic_BMU_WRAPPED_MP3 {
         format = "BMU V1.0 + MP3"
     strings:
         $bmu_header = "BMU V1.0"
-        $mp3_header = { FF FB ?? ?? 00 00 }
+        $mp3_header = { FF FB ?? ?? 00 }
     condition:
         $bmu_header at 0 and $mp3_header at 9
 }
