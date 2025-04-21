@@ -1623,23 +1623,20 @@ rule file_detect_magic_MESA_shader_CACHE_DB {
 
 
 
-
-
-
-//rule file_detect_magic_zlib {
-//    meta:
-//        author = "xCEVre"
-//        description = "Detects zlib compression with no compression and no preset dictionary"
-//    strings:
-//        $header_1 = { 78 01 } // zlib No Compression (no preset dictionary)
-//        $header_2 = { 78 20 } // zlib No compression (with preset dictionary)
-//        $header_3 = { 78 5E } // zlib Best speed (no preset dictionary)
-//        $header_4 = { 78 7D } // zlib Best speed (with preset dictionary)
-//        $header_5 = { 78 9C } // zlib Default compression (no preset dictionary)
-//        $header_6 = { 78 BB } // zlib Default compression (with preset dictionary)
-//        $header_7 = { 78 DA } // zlib Best compression (no preset dictionary)
-//        $header_8 = { 78 F9 } // zlib Best compression (with preset dictionary)
-//    condition:
-//        (filesize >= 6) and (any of them at 0) and (uint32(filesize - 4) != 0)
-//}
+rule file_detect_magic_zlib {
+    meta:
+        author = "xCEVre"
+        description = "Detects zlib compression with no compression and no preset dictionary"
+    strings:
+        $header_1 = { 78 01 } // zlib No Compression (no preset dictionary)
+        $header_2 = { 78 20 } // zlib No compression (with preset dictionary)
+        $header_3 = { 78 5E } // zlib Best speed (no preset dictionary)
+        $header_4 = { 78 7D } // zlib Best speed (with preset dictionary)
+        $header_5 = { 78 9C } // zlib Default compression (no preset dictionary)
+        $header_6 = { 78 BB } // zlib Default compression (with preset dictionary)
+        $header_7 = { 78 DA } // zlib Best compression (no preset dictionary)
+        $header_8 = { 78 F9 } // zlib Best compression (with preset dictionary)
+    condition:
+        (filesize >= 6) and (any of them at 0)
+}
 
