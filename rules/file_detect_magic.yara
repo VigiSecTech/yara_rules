@@ -307,7 +307,7 @@ rule file_detect_magic_MPEG_1_LAYER_3_MP3{
         $header_4 = { FF FB B0 44 00 00 }
         $header_any = { FF FB ?? ?? 00 00 }
     condition:
-        any of them at 0
+        any of them
 }
 
 rule file_detect_magic_APPLE_DESKTOP_SERVICES_STORE{
