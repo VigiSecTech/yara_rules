@@ -301,10 +301,11 @@ rule file_detect_magic_MPEG_1_LAYER_3_MP3{
         severityLevel= "INFORMATIONAL"
         description = "Detects '.mp3' files"
     strings:
-        $header_1 = { FF F3 C0 CC 00 }
-        $header_2 = { FF F3 C8 C4 00 }
-        $header_3 = { FF FB 90 C4 00 }
-        $header_4 = { FF FB B0 44 00 }
+        $header_1 = { FF F3 C0 CC 00 00 }
+        $header_2 = { FF F3 C8 C4 00 00 }
+        $header_3 = { FF FB 90 C4 00 00 }
+        $header_4 = { FF FB B0 44 00 00 }
+        $header_any = { FF FB ?? ?? 00 00 }
     condition:
         any of them at 0
 }
