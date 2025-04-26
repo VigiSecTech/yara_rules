@@ -9,7 +9,7 @@
 //	ARCHIVE       // Используется для хранилищ (архивы и тд)
 //	UNKNOWN       // Не известно
 
-rule file_detect_magic_video_FreeArc{
+rule file_detect_magic_video_Bink{
     meta:
         author = "xCEVre"
         date = "2025-04-26"
