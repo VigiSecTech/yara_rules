@@ -9,7 +9,17 @@
 //	ARCHIVE       // Используется для хранилищ (архивы и тд)
 //	UNKNOWN       // Не известно
 
-
+rule file_detect_magic_video_FreeArc{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-26"
+        severityLevel= "INFORMATIONAL"
+        description = "Bink Video 2 rev.g"
+    strings:
+        $magic = { 4B 42 32 67 }
+    condition:
+        any of them at 0
+}
 rule file_detect_magic_archive_FreeArc{
     meta:
         author = "xCEVre"
