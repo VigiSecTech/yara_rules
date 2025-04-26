@@ -9,6 +9,20 @@
 //	ARCHIVE       // Используется для хранилищ (архивы и тд)
 //	UNKNOWN       // Не известно
 
+
+rule file_detect_magic_Bethesda_ESM{
+    meta:
+        author         = "xCEVre"
+        date           = "2025-04-26"
+        severityLevel  = "UNKNOWN"
+        description    = "Bethesda ESM: (Elder Scrolls Master file) , Используется в сериях игр The Elder Scrolls, Fallout"
+    strings:
+        $magic_tiny = { 54 45 53 34 }
+        $magic_full = { 54 45 53 34 ?? ?? 00 00 81 00 00 00 00 00 00 00 00 00 00 00 83 00 00 00 48 45 44 52 0C 00 ?? ?? }
+    condition:
+        any of them at 0
+}
+
 rule file_detect_magic_UNKNOWN_ba2{
     meta:
         author = "xCEVre"
