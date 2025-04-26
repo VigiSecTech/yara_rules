@@ -35,6 +35,18 @@ rule file_detect_magic_UNKNOWN_ba2{
     condition:
         any of them at 0
 }
+rule file_detect_magic_UNKNOWN_csg{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-26"
+        severityLevel= "UNKNOWN"
+        description = "files with '.csg' extension"
+    strings:
+        $magic_tiny = { 62 63 73 67 }
+        $magic_32 = { 62 63 73 67 ?? ?? 00 00 ?? ?? 00 00 ?? ?? 00 00 ?? ?? ?? 00 ?? ?? 00 00 ?? ?? ?? ?? ?? ?? ?? 00 }
+    condition:
+        any of them at 0
+}
 rule file_detect_magic_video_Bink{
     meta:
         author = "xCEVre"
