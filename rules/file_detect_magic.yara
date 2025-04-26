@@ -9,6 +9,18 @@
 //	ARCHIVE       // Используется для хранилищ (архивы и тд)
 //	UNKNOWN       // Не известно
 
+rule file_detect_magic_UNKNOWN_ba2{
+    meta:
+        author = "xCEVre"
+        date = "2025-04-26"
+        severityLevel= "UNKNOWN"
+        description = "files with '.ba2' extension"
+    strings:
+        $magic_tiny = { 42 54 44 58 }
+        $magic_32 = { 42 54 44 58 ?? 00 00 00 ?? ?? ?? ?? ?? ?? ?? 00 ?? ?? ?? ?? 00 00 00 00 ?? ?? ?? ?? ?? ?? }
+    condition:
+        any of them at 0
+}
 rule file_detect_magic_video_Bink{
     meta:
         author = "xCEVre"
