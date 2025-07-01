@@ -1349,18 +1349,14 @@ rule file_detect_magic_GIF {
 }
 
 
-rule file_detect_magic_ZIP{
+rule file_detect_magic_ZIP {
     meta:
         author = "xCEVre"
         description = "Detects files that contain the ZIP magic number (PK..)"  // Описание правила
         date = "2025-04-01"
         severityLevel= "ARCHIVE"
-
-    strings:
-        $zip_magic = { 50 4B 03 04 }
-
     condition:
-        $zip_magic at 0
+         uint32be(0) == 0x504B0304 // { 50 4B 03 04 }
 }
 
 rule file_detect_magic_MPEG_Program_Stream {
