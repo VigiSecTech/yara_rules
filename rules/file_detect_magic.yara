@@ -1364,11 +1364,9 @@ rule file_detect_magic_MPEG_Program_Stream {
         author = "xCEVre"
         description = "Detects MPEG Program Stream files (MPEG-1 Part 1 and MPEG-2 Part 1)"
 
-    strings:
-        $header_1 = { 00 00 01 BA } // MPEG Program Stream header (MPEG-1 Part 1 and MPEG-2 Part 1)
 
     condition:
-        $header_1 at 0
+         uint32be(0) == 0x000001BA // { 00 00 01 BA }
 }
 
 rule file_detect_magic_MPEG_Video {
