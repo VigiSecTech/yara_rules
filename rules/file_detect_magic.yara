@@ -1665,6 +1665,16 @@ rule file_detect_magic_MESA_shader_CACHE_DB {
         $header at 0
 }
 
+rule file_detect_magic_m4v {
+    meta:
+        author = "xCEVre"
+        description = "Detects video .m4v "
+        date = "2025-07-01"
+    strings:
+        $m4v_header = { 00 00 00 1C 66 74 79 70 4D 34 56 20 }
+    condition:
+        $m4v_header at 0
+}
 
 
 
