@@ -1,4 +1,4 @@
-rule file_detect_magic_JAVA_SER {
+rule vigilantx_file_detect_magic_JAVA_SER {
   meta:
     description = "Detects Java serialized object files of any version at the beginning of the file"
     author      = "xCEVre"
@@ -11,7 +11,7 @@ rule file_detect_magic_JAVA_SER {
     any of them at 0
 }
 
-rule file_detect_magic_JAVA_CLASS {
+rule vigilantx_file_detect_magic_JAVA_CLASS {
   meta:
     description = "Detects Java class file"
     author      = "xCEVre"
@@ -24,7 +24,7 @@ rule file_detect_magic_JAVA_CLASS {
     $magic at 0
 }
 
-rule file_detect_magic_JAVA_CLASS_v8 {
+rule vigilantx_file_detect_magic_JAVA_CLASS_v8 {
   meta:
     description = "Detects Java 1.8 class file"
     author      = "xCEVre"
@@ -37,7 +37,7 @@ rule file_detect_magic_JAVA_CLASS_v8 {
     $magic at 0
 }
 
-rule file_detect_magic_JAVA_CLASS_v21 {
+rule vigilantx_file_detect_magic_JAVA_CLASS_v21 {
   meta:
     description = "Detects Java 21 class file"
     author      = "xCEVre"
@@ -50,7 +50,7 @@ rule file_detect_magic_JAVA_CLASS_v21 {
     $magic at 0
 }
 
-rule file_detect_magic_JAVA_CLASS_v23 {
+rule vigilantx_file_detect_magic_JAVA_CLASS_v23 {
   meta:
     description = "Detects Java 23 class file"
     author      = "xCEVre"
@@ -63,7 +63,18 @@ rule file_detect_magic_JAVA_CLASS_v23 {
     $magic at 0
 }
 
-rule file_detect_magic_JAVA_MODULE {
+rule vigilantx_file_detect_magic_JAVA_CLASS_v25 {
+    meta:
+        description = "Detects Java 25 (JDK 25) class file format"
+        author      = "xCEVre"
+        date        = "2025-07-05"
+    strings:
+        $magic = { CA FE BA BE 00 00 00 45 }
+    condition:
+        $magic at 0
+}
+
+rule vigilantx_file_detect_magic_JAVA_MODULE {
   meta:
     author        = "xCEVre"
     date          = "2025-04-15"
@@ -77,7 +88,7 @@ rule file_detect_magic_JAVA_MODULE {
     $header at 0
 }
 
-rule file_detect_magic_JAVA_MODULE_V1 {
+rule vigilantx_file_detect_magic_JAVA_MODULE_V1 {
   meta:
     author        = "xCEVre"
     date          = "2025-04-15"
