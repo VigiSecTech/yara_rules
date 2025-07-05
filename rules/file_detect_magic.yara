@@ -17,7 +17,7 @@ rule file_detect_magic_Bethesda_ESM{
         severityLevel  = "UNKNOWN"
         description    = "Bethesda ESM: (Elder Scrolls Master file) , Используется в сериях игр The Elder Scrolls, Fallout"
     strings:
-        $magic_tiny = { 54 45 53 34 }
+        $magic_tiny = "TES4"
         $magic_full = { 54 45 53 34 ?? ?? 00 00 81 00 00 00 00 00 00 00 00 00 00 00 83 00 00 00 48 45 44 52 0C 00 ?? ?? }
     condition:
         any of them at 0
@@ -30,7 +30,7 @@ rule file_detect_magic_UNKNOWN_ba2{
         severityLevel= "UNKNOWN"
         description = "files with '.ba2' extension"
     strings:
-        $magic_tiny = { 42 54 44 58 }
+        $magic_tiny = "BTDX"
         $magic_32 = { 42 54 44 58 ?? 00 00 00 ?? ?? ?? ?? ?? ?? ?? 00 ?? ?? ?? ?? 00 00 00 00 ?? ?? ?? ?? ?? ?? }
     condition:
         any of them at 0
@@ -42,7 +42,7 @@ rule file_detect_magic_UNKNOWN_csg{
         severityLevel= "UNKNOWN"
         description = "files with '.csg' extension"
     strings:
-        $magic_tiny = { 62 63 73 67 }
+        $magic_tiny = "bcsg"
         $magic_32 = { 62 63 73 67 ?? ?? 00 00 ?? ?? 00 00 ?? ?? 00 00 ?? ?? ?? 00 ?? ?? 00 00 ?? ?? ?? ?? ?? ?? ?? 00 }
     condition:
         any of them at 0
@@ -54,7 +54,7 @@ rule file_detect_magic_UNKNOWN_cdx{
         severityLevel= "UNKNOWN"
         description = "files with '.cdx' extension"
     strings:
-        $magic_tiny = { 62 63 64 78 }
+        $magic_tiny =  "bcdx"
         $magic_32 = { 62 63 64 78 ?? ?? ?? 00 ?? ?? ?? ?? ?? ?? 00 ?? ?? ?? ?? 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 ?? }
     condition:
         any of them at 0
@@ -66,7 +66,7 @@ rule file_detect_magic_video_Bink{
         severityLevel= "INFORMATIONAL"
         description = "Bink Video 2 rev.g"
     strings:
-        $magic = { 4B 42 32 67 }
+        $magic = "KB2g"
     condition:
         any of them at 0
 }
@@ -89,7 +89,7 @@ rule file_detect_magic_SHEBANG_PERL{
         severityLevel= "LOW"
         description = "Detects 'Perl script text executable"
     strings:
-        $header_1 = { 23 21 2F 75 73 72 2F 62 69 6E 2F 70 65 72 6C }	// '#!/usr/bin/perl'
+        $header_1 = "#!/usr/bin/perl"
     condition:
         any of them at 0
 }
@@ -100,8 +100,8 @@ rule file_detect_magic_SHEBANG_SH{
         severityLevel= "LOW"
         description = "Detects 'POSIX shell script' files"
     strings:
-        $header_1 = { 23 21 2F    62 69 6E 2F 73 68 }	// '#!/bin/sh'
-        $header_2 = { 23 21 20 2F 62 69 6E 2F 73 68 }	// '#! /bin/sh'
+        $header_1 = "#!/bin/sh"
+        $header_2 = "#! /bin/sh"
     condition:
         any of them at 0
 }
@@ -112,7 +112,7 @@ rule file_detect_magic_SHEBANG_ENV_BASH{
         severityLevel= "LOW"
         description = "Detects 'Bourne-Again shell script' files"
     strings:
-        $header = { 23 21 2F 75 73 72 2F 62 69 6E 2F 65 6E 76 20 62 61 73 68 } // '#!/usr/bin/env bash'
+        $header = "#!/usr/bin/env bash"
     condition:
         $header at 0
 }
@@ -139,7 +139,7 @@ rule file_detect_magic_xpm{
         severityLevel= "INFORMATIONAL"
         description = "Detects 'X pixmap image text' '.xpm' files"
     strings:
-        $header = { 2F 2A 20 58 50 4D 20 2A 2F 0A 73 74 61 74 69 63 20 63 68 61 72 20 2A 20 }
+        $header = "/* XPM */\nstatic char * "
     condition:
         $header at 0
 }
@@ -155,7 +155,7 @@ rule file_detect_magic_CRYPTO_PEM_RSA_PRIVATE_KEY{
         severityLevel= "INFORMATIONAL"
         description = "Detects (PEM RSA private key) files"
     strings:
-        $header = { 2D 2D 2D 2D 2D 42 45 47 49 4E 20 52 53 41 20 50 52 49 56 41 54 45 20 4B 45 59 2D 2D 2D 2D 2D }
+        $header = "-----BEGIN RSA PRIVATE KEY-----"
     condition:
         $header at 0
 }
@@ -166,8 +166,8 @@ rule file_detect_magic_CRYPTO_PEM_CERTIFICATE{
         severityLevel= "INFORMATIONAL"
         description = "Detects PEM certificate files"
     strings:
-        $start = { 2d 2d 2d 2d 2d 42 45 47  49 4e 20 43 45 52 54 49 46 49 43 41 54 45 2d 2d  2d 2d 2d }
-        $end = { 2d 2d 2d 2d 2d 45 4e 44  20 43 45 52 54 49 46 49 43 41 54 45 2d 2d 2d 2d  2d }
+        $start = "-----BEGIN CERTIFICATE-----"
+        $end = "-----END CERTIFICATE-----"
     condition:
         any of them
 }
@@ -178,8 +178,8 @@ rule file_detect_magic_CRYPTO_DH_PARAMETERS{
         severityLevel= "INFORMATIONAL"
         description = "Detects files with DH PARAMETERS"
     strings:
-        $start = { 2d 2d 2d 2d 2d 42 45 47  49 4e 20 44 48 20 50 41 52 41 4d 45 54 45 52 53  2d 2d 2d 2d 2d }
-        $end = { 2d 2d 2d 2d 2d 45 4e 44  20 44 48 20 50 41 52 41 4d 45 54 45 52 53 2d 2d  2d 2d 2d }
+        $start = "-----BEGIN DH PARAMETERS-----"
+        $end = "-----END DH PARAMETERS-----"
     condition:
         any of them
 }
@@ -191,7 +191,7 @@ rule file_detect_magic_ELF{
         severityLevel= "UNKNOWN"
         description = "Detects ELF files"
     strings:
-        $header = { 7F 45 4C 46 }
+        $header ={ 7F 45 4C 46 }
     condition:
         $header at 0
 }
@@ -228,7 +228,7 @@ rule file_detect_magic_PaintShop_Pro_color_palette{
         severityLevel= "UNKNOWN"
         description = "Detects 'PaintShop Pro color palette' '.pal' files"
     strings:
-        $magic = { 4A 41 53 43 2D 50 41 4C 0D 0A 30 31 30 30 0D 0A 32 35 36 0D 0A }
+        $magic = "JASC-PAL\r\n0100\r\n256\r\n"
     condition:
         any of them at 0
 }
@@ -252,7 +252,7 @@ rule file_detect_magic_UNKNOWN_tab{
         severityLevel= "UNKNOWN"
         description = "Detects '.tab' files"
     strings:
-        $magic = { 44 75 6D 6D 79 09 30 09 45 6D 70 74 79 0D 0A 49 44 }
+        $magic = "Dummy\t0\tEmpty\r\nID"
     condition:
         any of them at 0
 }
@@ -279,7 +279,7 @@ rule file_detect_magic_UNKNOWN_mhr{
         severityLevel= "UNKNOWN"
         description = "Detects '.mhr' files"
     strings:
-        $magic = { 4D 69 6E 50 48 52 30 32 }
+        $magic = "MinPHR02"
     condition:
         any of them at 0
 }
@@ -293,7 +293,7 @@ rule file_detect_magic_UNKNOWN_slp{
         severityLevel= "UNKNOWN"
         description = "Detects '.slp' files"
     strings:
-        $magic = { 32 2E 30 4E }
+        $magic = "2.0N"
     condition:
         any of them at 0
 }
@@ -338,7 +338,7 @@ rule file_detect_magic_UNKNOWN_CPX{
         severityLevel= "UNKNOWN"
         description = "Detects '.CPX' files"
     strings:
-        $magic = { 31 2E 30 30 58 43 41 4D }
+        $magic = "1.00XCAM"
     condition:
         any of them at 0
 }
@@ -349,7 +349,7 @@ rule file_detect_magic_UNKNOWN_cp1{
         severityLevel= "UNKNOWN"
         description = "Detects '.cp1' files"
     strings:
-        $magic = { 31 2E 30 30 31 43 41 4D }
+        $magic = "1.001CAM"
     condition:
         any of them at 0
 }
@@ -400,7 +400,7 @@ rule file_detect_magic_WINE_REG_V2{
         severityLevel= "INFORMATIONAL"
         description = "Detects wine registry file with extension '.reg'"
     strings:
-        $header = { 57 49 4E 45 20 52 45 47 49 53 54 52 59 20 56 65 72 73 69 6F 6E 20 32 }
+        $header = "WINE REGISTRY Version 2"
     condition:
         $header at 0
 }
@@ -425,8 +425,8 @@ rule file_detect_magic_MS_Window_Setup_INFormation{
         severityLevel= "INFORMATIONAL"
         description = "Detects 'Windows setup INFormation' files extension '.inf'"
     strings:
-        $header_0 = { 5B 56 65 72 73 69 6F 6E 5D 0A 53 69 67 6E 61 74 75 72 65 3D 22 24 43 48 49 43 41 47 4F 24 22 } // [Version] \n Signature="$CHICAGO$"
-        $header_1 = { 5B 56 65 72 73 69 6F 6E 5D 0A 53 69 67 6E 61 74 75 72 65 3D 22 24 43 48 49 43 41 47 4F 24 22 0A 43 6C 61 73 73 47 75 69 64 3D 7B } // [Version] \n Signature="$CHICAGO$" \n ClassGuid={
+        $header_0 = "[Version]\nSignature=\"$CHICAGO$\""
+        $header_1 = "[Version]\nSignature=\"$CHICAGO$\"\nClassGuid={"
     condition:
         any of them at 0
 }
@@ -536,7 +536,7 @@ rule file_detect_magic_RIFF_WAV {
         date = "2025-04-01"
         severityLevel= "INFORMATIONAL"
     strings:
-        $wave_marker = { 57 41 56 45 } // "WAVE" 
+        $wave_marker = "WAVE"
     condition:
 		file_detect_magic_RIFF and $wave_marker at 8
 }
@@ -548,7 +548,7 @@ rule file_detect_magic_RIFF_WEBP {
         reference_0="https://en.wikipedia.org/wiki/WebP"
         description = "Detects WebP image files by their magic bytes"
     strings:
-        $webp_header = {  57 45 42 50 } // "WEBP"
+        $webp_header = "WEBP"
     condition:
 		file_detect_magic_RIFF and $webp_header at 8
 }
@@ -560,7 +560,7 @@ rule file_detect_magic_CEPACK {
         description = "Обнаружение файлов CEPACK"
 		severityLevel= "UNKNOWN"
     strings:
-        $header = { 43 45 50 41 43 4B }
+        $header = "CEPACK"
     condition:
         $header at 0
 }
@@ -612,7 +612,7 @@ rule file_detect_magic_grafana_BeylaConfig {
         author = "xCEVre"
         date = "2025-04-01"
     strings:
-        $magic = { 23 62 65 79 6C 61 5F 69 64 73 0A }
+        $magic = "#beyla_ids\n"
     condition:
 		$magic at 0       
 }
@@ -625,7 +625,7 @@ rule file_detect_magic_XML {
 
     strings:
         $xml_BOM = { EF BB BF }
-        $xml_header ={ 3C 3F 78 6D 6C} // "<?xml"
+        $xml_header ="<?xml"  
     condition:
 		($xml_BOM at 0 and $xml_header at 3) or ($xml_header at 0)        
 }
@@ -665,7 +665,7 @@ rule file_detect_magic_AllInOneOfflineMaps_WPT {
         date = "2025-04-01"
         severityLevel= "INFORMATIONAL"
     strings:
-        $header = { 0A } // третий байт сигнализирующий что файл должен иметь формат ".wpt"
+        $header = "\n" // третий байт сигнализирующий что файл должен иметь формат ".wpt"
     condition:
         file_detect_magic_AllInOneOfflineMaps and $header at 2
 }
@@ -676,7 +676,7 @@ rule file_detect_magic_AllInOneOfflineMaps_ARE {
         date = "2025-04-01"
         severityLevel= "INFORMATIONAL"
     strings:
-        $header = { 0D } // третий байт сигнализирующий что файл должен иметь формат ".are"
+        $header = "\r" // третий байт сигнализирующий что файл должен иметь формат ".are"
     condition:
         file_detect_magic_AllInOneOfflineMaps and $header at 2
 }
@@ -790,7 +790,7 @@ rule file_detect_magic_ADOBE_COLOR_SWATCH {
     strings:
         $header_version = { 00 00 00 04 } // Количество цветов (4)
         $header_info = { 00 00 00 03 }    // Версия или другой параметр
-        $swatch_bytes = { 4d 61 70 5f 50 61 69 6e 74 65 72 5f 53 5f 36 } // Байты для Map_Painter_S_6
+        $swatch_bytes = "Map_Painter_S_6" 
 
     condition:
         $header_version at 0 and $header_info and $swatch_bytes // Проверка заголовка и байтовой последовательности
@@ -831,7 +831,7 @@ rule file_detect_magic_PE {
         date = "2025-04-01"
         reference = "PE file format signature"
     strings:
-        $mz_header = { 4D 5A }  // "MZ" header for PE files
+        $mz_header = "MZ"  // "MZ" header for PE files
         $pe_header = { 50 45 00 00 }  // "PE\0\0" signature
         $dos_message = "This program cannot be run in DOS mode." ascii
     condition:
@@ -856,8 +856,8 @@ rule file_detect_magic_MAC_OS_X_ICON {
         date = "2025-04-01"
         reference = "ICNS file format signature"
     strings:
-        $icns_header = { 69 63 6E 73 }  // "icns" file signature
-        $toc_entry = { 54 4F 43 20 }    // "TOC " Table of Contents entry
+        $icns_header = "icns"  // file signature
+        $toc_entry =  "TOC "    // Table of Contents entry
     condition:
         $icns_header at 0 and $toc_entry in (0..0x100)
 }
@@ -880,7 +880,7 @@ rule file_detect_magic_MAC_OS_X_Binary_Property_List {
         date = "2025-04-01"
         reference = "Binary Property List format signature"
     strings:
-        $bplist_header = { 62 70 6C 69 73 74 30 30 }  // "bplist00" file signature
+        $bplist_header = "bplist00"
     condition:
         $bplist_header at 0
 }
@@ -903,10 +903,10 @@ rule file_detect_magic_MAC_OS_X_NSHumanReadableCopyright_utf16
         date = "2025-04-01"
 
     strings:
-        $copyright_text = { ff fe fe ff 00 0a 00 4e  00 53 00 48 00 75 00 6d
-                            00 61 00 6e 00 52 00 65  00 61 00 64 00 61 00 62
-                            00 6c 00 65 00 43 00 6f  00 70 00 79 00 72 00 69
-                            00 67 00 68 00 74 00 20  00 3d 00 20 00 22 00 43
+        $copyright_text = { ff fe fe ff 00 0a 00 4e  00 53 00 48 00 75 00 6d //
+                            00 61 00 6e 00 52 00 65  00 61 00 64 00 61 00 62 //
+                            00 6c 00 65 00 43 00 6f  00 70 00 79 00 72 00 69 //
+                            00 67 00 68 00 74 00 20  00 3d 00 20 00 22 00 43 //
                             00 6f 00 70 00 79 00 72 00 69 00 67 00 68 00 74 }
 
     condition:
@@ -921,9 +921,8 @@ rule file_detect_magic_MAC_OS_X_Plist
         last_modified = "2025-03-21"
 
     strings:
-        $xml_declaration = { 3c 3f 78 6d 6c 20 76 65 72 73 69 6f 6e 3d 22 31 2e 30 22 20 65 6e 63 6f 64 69 6e 67 3d 22 55 54 46 2d 38 22 3f 3e }
-        $doctype_plist = { 3c 21 44 4f 43 54 59 50 45 20 70 6c 69 73 74 20 50 55 42 4c 49 43 20 22 2d 2f 2f 41 70 70 6c 65 2f 2f 44 54 44 20 50 4c 49 53 54 20 31 2e 30 2f 2f 45 4e 22 20 22 68 74 74 70 3a 2f 2f 77 77 77 2e 61 70 70 6c 65 2e 63 6f 6d 2f 44 54 44 73 2f 50 72 6f 70 65 72 74 79 4c 69 73 74 2d 31 2e 30 2e 64 74 64 22 3e }
-        
+        $xml_declaration = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        $doctype_plist ="<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">"
     condition:
         $xml_declaration at 0 and $doctype_plist
 }
@@ -934,9 +933,9 @@ rule file_detect_magic_MAC_OS_X_PkgInfo {
         author = "xCEVre"
         date = "2025-04-01"
     strings:
-        $magic = { 41 50 50 4c 53 57 46 32 }  // "APPLSWF2" magic signature
-        $magic_2 = { 41 50 50 4c 53 57 46 31 }  // "APPLSWF1" magic signature
-        $magic_3 = { 41 50 50 4c 53 49 47 4e }  // "APPLSIGN" magic signature
+        $magic ="APPLSWF2"
+        $magic_2 = "APPLSWF1"
+        $magic_3 = "APPLSIGN"
     condition:
         any of them at 0
 }
@@ -965,7 +964,7 @@ rule file_detect_magic_AVIF
 
     strings:
         // Сигнатура в начале AVIF файла: "ftypavif"
-        $avif_header = { 66 74 79 70 61 76 69 66 } // "ftypavif" в hexadecimal
+        $avif_header = "ftypavif"
 
     condition:
         // Проверяем, что сигнатура находится в начале файла
@@ -987,7 +986,7 @@ rule file_detect_magic_OPUS_OGG
         date = "2025-04-01"
 
     strings:
-        $opus_magic = { 4F 67 67 53 } // "OggS"
+        $opus_magic = "OggS"
     condition:
         // Файл должен начинаться с сигнатуры Ogg
         $opus_magic at 0
@@ -1031,9 +1030,9 @@ rule file_detect_magic_MP4 {
         description = "Detects MP4 files by their magic bytes"
 
     strings:
-        $mp4_isom = { 66 74 79 70 69 73 6F 6D } // "ftypisom"
-        $mp4_msnv = { 66 74 79 70 4D 53 4E 56 } // "ftypMSNV"
-        $mp4_mp42 = { 66 74 79 70 6D 70 34 32 } // "ftypmp42"
+        $mp4_isom = "ftypisom"
+        $mp4_msnv = "ftypMSNV"
+        $mp4_mp42 = "ftypmp42"
 
     condition:
         any of them at 4
@@ -1046,8 +1045,8 @@ rule file_detect_magic_SWF {
         description = "Detects Adobe Flash SWF files by their magic bytes"
 
     strings:
-        $swf_compressed   = { 43 57 53 } // "CWS" - Сжатый SWF
-        $swf_uncompressed = { 46 57 53 } // "FWS" - Несжатый SWF
+        $swf_compressed   = "CWS" // "CWS" - Сжатый SWF
+        $swf_uncompressed = "FWS" // "FWS" - Несжатый SWF
 
     condition:
         $swf_compressed at 0 or $swf_uncompressed at 0
@@ -1060,8 +1059,8 @@ rule file_detect_magic_WOFF {
         description = "Detects WOFF font files"
 
     strings:
-        $woff  = { 77 4F 46 46 } // "wOFF"
-        $woff2 = { 77 4F 46 32 } // "wOF2"
+        $woff  ="wOFF"
+        $woff2 = "wOF2"
 
     condition:
         $woff at 0 or $woff2 at 0
@@ -1073,12 +1072,12 @@ rule file_detect_magic_TORRENT {
         description = "Detects torrent files based on Bencode structure"
         author = "xCEVre"
     strings:
-        $bencode_info = { 64 34 3A 69 6E 66 6F }  // "d4:info"
-        $bencode_piece_length = { 36 3A 70 69 65 63 65 73 5F 6C 65 6E 67 74 68 }  // "6:pieces_length"
-        $bencode_comment = { 64 37 3A 63 6F 6D 6D 65 6E 74 }  // "d7:comment"
-        $bencode_announce = { 64 38 3A 61 6E 6E 6F 75 6E 63 65 }  // "d8:announce"
-        $bencode_created_by = { 64 31 30 3A 63 72 65 61 74 65 64 20 62 79 }  // "d10:created by"
-        $bencode_announce_list = { 64 31 33 3a 61 6e 6e 6f  75 6e 63 65 2d 6c 69 73 74 }  // "d13:announce-list"
+        $bencode_info = "d4:info"
+        $bencode_piece_length = "6:pieces_length"
+        $bencode_comment = "d7:comment"
+        $bencode_announce = "d8:announce"
+        $bencode_created_by = "d10:created by"
+        $bencode_announce_list = "d13:announce-list"
 
     condition:
         any of them at 0
@@ -1093,7 +1092,7 @@ rule file_detect_magic_PDF
         version = "1.0"
         
     strings:
-        $pdf_magic = { 25 50 44 46 2d }  // %PDF-
+        $pdf_magic = "%PDF-"
     condition:
         $pdf_magic at 0 
 }
@@ -1109,7 +1108,7 @@ rule file_detect_magic_X509_Cert {
 
     strings:
         $der_cert  = { 30 82 } // DER-encoded certificate
-        $pem_cert  = { 2D 2D 2D 2D 2D 42 45 47 49 4E 20 43 45 52 54 49 46 49 43 41 54 45 2D 2D 2D 2D 2D } // PEM-encoded certificate
+        $pem_cert  = "-----BEGIN CERTIFICATE-----"
 
     condition:
         $der_cert at 0 or $pem_cert at 0
@@ -1122,7 +1121,7 @@ rule file_detect_magic_X509_CSR {
         severityLevel= "INFORMATIONAL"
 
     strings:
-        $csr = { 2D 2D 2D 2D 2D 42 45 47 49 4E 20 43 45 52 54 49 46 49 43 41 54 45 20 52 45 51 55 45 53 54 2D 2D 2D 2D 2D } // CSR request
+        $csr = "-----BEGIN CERTIFICATE REQUEST-----"
 
     condition:
         $csr at 0
@@ -1136,7 +1135,7 @@ rule file_detect_magic_SSH_Public_Key {
         severityLevel= "INFORMATIONAL"
 
     strings:
-        $ssh_pub = { 2D 2D 2D 2D 2D 42 45 47 49 4E 20 53 53 48 32 20 4B 45 59 2D 2D 2D 2D 2D } // SSH2 public key
+        $ssh_pub = "-----BEGIN SSH2 KEY-----"
 
     condition:
         $ssh_pub at 0
@@ -1148,7 +1147,7 @@ rule file_detect_magic_PKCS8_Private_Key {
         description = "Detects PEM encoded PKCS#8 private keys"
 
     strings:
-        $pkcs8_key = { 2D 2D 2D 2D 2D 42 45 47 49 4E 20 50 52 49 56 41 54 45 20 4B 45 59 2D 2D 2D 2D 2D } // "-----BEGIN PRIVATE KEY-----"
+        $pkcs8_key ="-----BEGIN PRIVATE KEY-----"
 
     condition:
         $pkcs8_key at 0
@@ -1160,7 +1159,7 @@ rule file_detect_magic_RSA_Private_Key {
         description = "Detects PEM encoded RSA private keys"
 
     strings:
-        $rsa_key = { 2D 2D 2D 2D 2D 42 45 47 49 4E 20 52 45 41 20 50 52 49 56 41 54 45 20 4B 45 59 2D 2D 2D 2D 2D } // "-----BEGIN RSA PRIVATE KEY-----"
+        $rsa_key = "-----BEGIN REA PRIVATE KEY-----"
 
     condition:
         $rsa_key at 0
@@ -1172,7 +1171,7 @@ rule file_detect_magic_DSA_Private_Key {
         description = "Detects PEM encoded DSA private keys"
 
     strings:
-        $dsa_key = { 2D 2D 2D 2D 2D 42 45 47 49 4E 20 44 53 41 20 50 52 49 56 41 54 45 20 4B 45 59 2D 2D 2D 2D 2D } // "-----BEGIN DSA PRIVATE KEY-----"
+        $dsa_key = "-----BEGIN DSA PRIVATE KEY-----"
 
     condition:
         $dsa_key at 0
@@ -1184,7 +1183,7 @@ rule file_detect_magic_OpenSSH_Private_Key {
         description = "Detects OpenSSH private keys"
 
     strings:
-        $openssh_key = { 2D 2D 2D 2D 2D 42 45 47 49 4E 20 4F 50 45 4E 53 53 48 20 50 52 49 56 41 54 45 20 4B 45 59 2D 2D 2D 2D 2D } // "-----BEGIN OPENSSH PRIVATE KEY-----"
+        $openssh_key = "-----BEGIN OPENSSH PRIVATE KEY-----"
 
     condition:
         $openssh_key at 0
@@ -1196,7 +1195,7 @@ rule file_detect_magic_PuTTY_Private_Key_V2 {
         description = "Detects PuTTY private key file version 2"
 
     strings:
-        $putty_v2 = { 50 75 54 54 59 2D 55 73 65 72 2D 4B 65 79 2D 46 69 6C 65 2D 32 3A } // "PuTTY-User-Key-File-2:"
+        $putty_v2 = "PuTTY-User-Key-File-2:"
 
     condition:
         $putty_v2 at 0
@@ -1208,7 +1207,7 @@ rule file_detect_magic_PuTTY_Private_Key_V3 {
         description = "Detects PuTTY private key file version 3"
 
     strings:
-        $putty_v3 = { 50 75 54 54 59 2D 55 73 65 72 2D 4B 65 79 2D 46 69 6C 65 2D 33 3A } // "PuTTY-User-Key-File-3:"
+        $putty_v3 = "PuTTY-User-Key-File-3:"
 
     condition:
         $putty_v3 at 0
@@ -1257,7 +1256,7 @@ rule file_detect_magic_CAB {
         description = "Detects Microsoft Cabinet files by their magic bytes"
 
     strings:
-        $header = { 4D 53 43 46 }
+        $header = "MSCF"
 
     condition:
         $header at 0
@@ -1330,7 +1329,7 @@ rule file_detect_magic_RTF {
         description = "Detects Rich Text Format (RTF) files by their magic bytes"
 
     strings:
-        $header = { 7B 5C 72 74 66 31 } // RTF header {\rtf1
+        $header ="{\\rtf1"
 
     condition:
         $header at 0
@@ -1342,7 +1341,7 @@ rule file_detect_magic_GIF {
         severityLevel= "INFORMATIONAL"
 
     strings:
-        $header = { 47 49 46 38 } // GIF8 magic bytes
+        $header = "GIF8"
 
     condition:
         $header at 0
@@ -1352,7 +1351,7 @@ rule file_detect_magic_GIF {
 rule file_detect_magic_ZIP {
     meta:
         author = "xCEVre"
-        description = "Detects files that contain the ZIP magic number (PK..)"  // Описание правила
+        description = "Detects files that contain the ZIP magic number (PK..)"
         date = "2025-04-01"
         severityLevel= "ARCHIVE"
     condition:
@@ -1391,7 +1390,7 @@ rule file_detect_magic_Roblox_Place {
         description = "Detects Roblox place file (rbxl) by magic bytes"
 
     strings:
-        $header = { 3C 72 6F 62 6C 6F 78 21 } // "<roblox!"
+        $header = "<roblox!"
 
     condition:
         $header at 0
@@ -1436,7 +1435,7 @@ rule file_detect_magic_QCOW {
         description = "Detects QCOW file by magic bytes"
 
     strings:
-        $qcow_header = { 51 46 49 } // QFI
+        $qcow_header = "QFI"
 
     condition:
         $qcow_header at 0
@@ -1447,7 +1446,7 @@ rule file_detect_magic_FLV {
         description = "Detects FLV (Flash Video) file by magic bytes"
 
     strings:
-        $flv_header = { 46 4C 56 } // FLV
+        $flv_header = "FLV"
 
     condition:
         $flv_header at 0
@@ -1458,7 +1457,7 @@ rule file_detect_magic_VDI {
         description = "Detects VirtualBox Virtual Hard Disk (VDI) file by magic string"
 
     strings:
-        $vdi_header = { 3C 3C 3C 20 4F 72 61 63 6C 65 20 56 4D 20 56 69 72 74 75 61 6C 42 6F 78 20 44 69 73 6B 20 49 6D 61 67 65 20 3E 3E 3E }
+        $vdi_header = "<<< Oracle VM VirtualBox Disk Image >>>"
 
     condition:
         $vdi_header at 0
@@ -1470,7 +1469,7 @@ rule file_detect_magic_VHD {
         description = "Detects Windows Virtual PC Virtual Hard Disk (VHD) file by magic string"
 
     strings:
-        $vhd_header = { 63 6F 6E 65 63 74 69 78 } // "conectix"
+        $vhd_header = "conectix"
 
     condition:
         $vhd_header at 0
@@ -1481,7 +1480,7 @@ rule file_detect_magic_VHDX {
         description = "Detects Windows Virtual PC Windows 8 Virtual Hard Disk (VHDX) file by magic string"
 
     strings:
-        $vhdx_header = { 76 68 64 78 66 69 6C 65 } // "vhdxfile"
+        $vhdx_header = "vhdxfile"
 
     condition:
         $vhdx_header at 0
@@ -1493,7 +1492,7 @@ rule file_detect_magic_ISZ {
         description = "Detects ISZ (Compressed ISO image) file by magic string"
 
     strings:
-        $isz_header = { 49 73 5A 21 } // "IsZ!"
+        $isz_header = "IsZ!"
 
     condition:
         $isz_header at 0
@@ -1505,7 +1504,7 @@ rule file_detect_magic_DAA {
         description = "Detects DAA (Direct Access Archive) file by magic string"
 
     strings:
-        $daa_header = { 44 41 41 } // "DAA"
+        $daa_header = "DAA"
 
     condition:
         $daa_header at 0
@@ -1517,7 +1516,7 @@ rule file_detect_magic_EVT {
         description = "Detects EVT (Windows Event Viewer file) by magic string"
 
     strings:
-        $evt_header = { 4C 66 4C 65 } // "LfLe"
+        $evt_header = "LfLe"
 
     condition:
         $evt_header at 0
@@ -1529,7 +1528,7 @@ rule file_detect_magic_EVTX {
         description = "Detects EVTX (Windows Event Viewer XML file) by magic string"
 
     strings:
-        $evtx_header = { 45 6C 66 46 69 6C 65 } // "ElfFile"
+        $evtx_header = "ElfFile"
 
     condition:
         $evtx_header at 0
@@ -1540,7 +1539,7 @@ rule file_detect_magic_BLEND {
         description = "Detects Blender file format by magic string"
 
     strings:
-        $blender_header = { 42 4C 45 4E 44 45 52 } // "BLENDER"
+        $blender_header = "BLENDER"
 
     condition:
         $blender_header at 0
@@ -1578,7 +1577,7 @@ rule file_detect_magic_OTF {
         severityLevel= "INFORMATIONAL"
 
     strings:
-        $otf_header = { 4F 54 54 4F } // "OTTO" header for OpenType font
+        $otf_header = "OTTO"
 
     condition:
         $otf_header at 0
@@ -1590,7 +1589,7 @@ rule file_detect_magic_Modulefile {
         description = "Detects Modulefile for Environment Modules"
 
     strings:
-        $modulefile_header = { 23 25 4D 6F 64 75 6C 65 } // "#%Module" for Modulefile
+        $modulefile_header = "#%Module"
 
     condition:
         $modulefile_header at 0
@@ -1602,7 +1601,7 @@ rule file_detect_magic_VBE {
         description = "Detects VBScript Encoded script (VBE) by magic bytes"
 
     strings:
-        $vbe_header = { 23 40 7E 5E } // "#@~^" header for VBE (VBScript Encoded script)
+        $vbe_header = "#@~^"
 
     condition:
         $vbe_header at 0
@@ -1627,7 +1626,7 @@ rule file_detect_magic_M3U {
         severityLevel= "INFORMATIONAL"
 
     strings:
-        $m3u_header = { 23 45 58 54 4D 33 55 } // "#EXTM3U" header for M3U playlist files
+        $m3u_header = "#EXTM3U"
 
     condition:
         $m3u_header at 0
@@ -1640,7 +1639,7 @@ rule file_detect_magic_PGP_Public_Key {
         severityLevel= "INFORMATIONAL"
 
     strings:
-        $pgp_header = { 2D 2D 2D 2D 2D 42 45 47 49 4E 20 50 47 50 20 50 55 42 4C 49 43 20 4B 45 49 20 42 4C 4F 43 4B 2D 2D 2D 2D 2D } // "-----BEGIN PGP PUBLIC KEY BLOCK-----"
+        $pgp_header = "-----BEGIN PGP PUBLIC KEI BLOCK-----" 
 
     condition:
         $pgp_header at 0
@@ -1678,9 +1677,9 @@ rule file_detect_magic_zlib {
         description = "Detects zlib compression with no compression and no preset dictionary"
     strings:
         $header_1 = { 78 01 } // zlib No Compression (no preset dictionary)
-        $header_2 = { 78 20 } // zlib No compression (with preset dictionary)
-        $header_3 = { 78 5E } // zlib Best speed (no preset dictionary)
-        $header_4 = { 78 7D } // zlib Best speed (with preset dictionary)
+        $header_2 = "x " // zlib No compression (with preset dictionary)
+        $header_3 = "x^" // zlib Best speed (no preset dictionary)
+        $header_4 = "x}" // zlib Best speed (with preset dictionary)
         $header_5 = { 78 9C } // zlib Default compression (no preset dictionary)
         $header_6 = { 78 BB } // zlib Default compression (with preset dictionary)
         $header_7 = { 78 DA } // zlib Best compression (no preset dictionary)
