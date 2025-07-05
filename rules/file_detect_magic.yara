@@ -191,7 +191,7 @@ rule file_detect_magic_ELF{
         severityLevel= "UNKNOWN"
         description = "Detects ELF files"
     strings:
-        $header ={ 7F 45 4C 46 }
+        $header ="\x7fELF"
     condition:
         $header at 0
 }
