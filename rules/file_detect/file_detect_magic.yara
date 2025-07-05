@@ -297,12 +297,12 @@ rule file_detect_magic_UNKNOWN_tab {
     any of them at 0
 }
 
-rule file_detect_magic_UNKNOWN_toc {
+rule file_detect_magic_NVIDIA_GLCache {
   meta:
     author        = "xCEVre"
     date          = "2025-04-12"
     severityLevel = "UNKNOWN"
-    description   = "Detects '.toc' files"
+    description   = "Detects '.toc' '.bin' files"
 
   strings:
     $magic_any = { 43 44 56 4E 00 00 ?? 00 }
