@@ -1,0 +1,1 @@
+include "data_exfiltration/vigilantx_data_exfiltration_discord_webhooks.yar"
