@@ -44,7 +44,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_230A2320436F {
     date          = "2025-07-06"
     severityLevel = "UNKNOWN"
   strings:
-    $magic = "#\n# Co"
+    $magic = "#\n# Configuration for "
   condition:
     $magic at 0
 }
