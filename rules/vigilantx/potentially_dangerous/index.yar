@@ -4,4 +4,4 @@ include "rules/vigilantx/potentially_dangerous/vigilantx_potentially_dangerous_j
 include "rules/vigilantx/potentially_dangerous/vigilantx_potentially_dangerous_java_Dangerous_Reflection.yar"
 include "rules/vigilantx/potentially_dangerous/vigilantx_potentially_dangerous_java_Dangerous_Socket_Connection.yar"
 include "rules/vigilantx/potentially_dangerous/vigilantx_potentially_dangerous_java_Runtime_Exec.yar"
-  
+

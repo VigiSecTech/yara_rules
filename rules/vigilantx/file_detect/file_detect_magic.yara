@@ -607,7 +607,7 @@ rule vigilantx_file_detect_magic_RIFF_AVI {
     $avi = { 41 56 49 20 4C 49 53 54 ?? ?? ?? ?? }
 
   condition:
-	vigilantx_file_detect_magic_RIFF and $avi at 8
+    vigilantx_file_detect_magic_RIFF and $avi at 8
 }
 
 rule vigilantx_file_detect_magic_RIFF_WAV {
