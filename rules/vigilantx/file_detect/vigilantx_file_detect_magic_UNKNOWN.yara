@@ -48,3 +48,15 @@ rule vigilantx_file_detect_magic_UNKNOWN_230A2320436F {
   condition:
     $magic at 0
 }
+
+
+rule vigilantx_file_detect_magic_UNKNOWN_23205761636F {
+  meta:
+    author        = "xCEVre"
+    date          = "2025-07-06"
+    severityLevel = "UNKNOWN"
+  strings:
+    $magic = "# Waco"
+  condition:
+    $magic at 0
+}
