@@ -35,3 +35,16 @@ rule vigilantx_file_detect_magic_UNKNOWN_232074686973 {
   condition:
     $magic at 0
 }
+
+
+
+rule vigilantx_file_detect_magic_UNKNOWN_230A2320436F {
+  meta:
+    author        = "xCEVre"
+    date          = "2025-07-06"
+    severityLevel = "UNKNOWN"
+  strings:
+    $magic = "#\n# Co"
+  condition:
+    $magic at 0
+}
