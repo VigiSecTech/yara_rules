@@ -1,4 +1,4 @@
-rule file_detect_magic_gpg_sig {
+rule vigilantx_file_detect_magic_gpg_sig {
   meta:
     description = "Detects Java class file"
     author      = "xCEVre"
