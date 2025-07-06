@@ -1,4 +1,4 @@
-rule file_detect_magic_RENPY_RPYC {
+rule vigilantx_file_detect_magic_RENPY_RPYC {
   meta:
     author        = "xCEVre"
     date          = "2025-04-04"
@@ -12,7 +12,7 @@ rule file_detect_magic_RENPY_RPYC {
     $header at 0
 }
 
-rule file_detect_magic_RENPY_RPYMC {
+rule vigilantx_file_detect_magic_RENPY_RPYMC {
   meta:
     author        = "xCEVre"
     date          = "2025-04-05"
@@ -26,7 +26,7 @@ rule file_detect_magic_RENPY_RPYMC {
     $header at 0
 }
 
-rule file_detect_magic_RENPY_ARCHIVE {
+rule vigilantx_file_detect_magic_RENPY_ARCHIVE {
   meta:
     author        = "xCEVre"
     date          = "2025-04-04"

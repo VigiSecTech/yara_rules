@@ -1,4 +1,4 @@
-rule file_detect_magic_VALVE_STEAM_CACHE_1 {
+rule vigilantx_file_detect_magic_VALVE_STEAM_CACHE_1 {
   meta:
     author        = "xCEVre"
     date          = "2025-04-02"
@@ -12,7 +12,7 @@ rule file_detect_magic_VALVE_STEAM_CACHE_1 {
     $header at 0
 }
 
-rule file_detect_magic_VALVE_STEAM_UNKNOWN_F {
+rule vigilantx_file_detect_magic_VALVE_STEAM_UNKNOWN_F {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -26,7 +26,7 @@ rule file_detect_magic_VALVE_STEAM_UNKNOWN_F {
     $header at 0
 }
 
-rule file_detect_magic_VALVE_STEAM_UNKNOWN_X_pbuf {
+rule vigilantx_file_detect_magic_VALVE_STEAM_UNKNOWN_X_pbuf {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -41,7 +41,7 @@ rule file_detect_magic_VALVE_STEAM_UNKNOWN_X_pbuf {
     any of them at 0
 }
 
-rule file_detect_magic_VALVE_STEAM_Settings_manifest {
+rule vigilantx_file_detect_magic_VALVE_STEAM_Settings_manifest {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -55,7 +55,7 @@ rule file_detect_magic_VALVE_STEAM_Settings_manifest {
     $header at 0
 }
 
-rule file_detect_magic_VALVE_STEAM_Settings_menu {
+rule vigilantx_file_detect_magic_VALVE_STEAM_Settings_menu {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -69,7 +69,7 @@ rule file_detect_magic_VALVE_STEAM_Settings_menu {
     $header at 0
 }
 
-rule file_detect_magic_VALVE_STEAM_AppState_acf {
+rule vigilantx_file_detect_magic_VALVE_STEAM_AppState_acf {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"

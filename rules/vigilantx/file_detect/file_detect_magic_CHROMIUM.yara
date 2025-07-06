@@ -1,4 +1,4 @@
-rule file_detect_magic_Chromium_ResourcePack_pak {
+rule vigilantx_file_detect_magic_Chromium_ResourcePack_pak {
   meta:
     author        = "xCEVre"
     date          = "2025-04-01"
@@ -12,7 +12,7 @@ rule file_detect_magic_Chromium_ResourcePack_pak {
     $header at 0
 }
 
-rule file_detect_magic_Chromium_v8cache {
+rule vigilantx_file_detect_magic_Chromium_v8cache {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -28,7 +28,7 @@ rule file_detect_magic_Chromium_v8cache {
     any of them at 0
 }
 
-rule file_detect_magic_chromium_graphics_cache {
+rule vigilantx_file_detect_magic_chromium_graphics_cache {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"

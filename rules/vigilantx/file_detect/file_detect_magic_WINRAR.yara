@@ -1,4 +1,4 @@
-rule file_detect_magic_WINRAR {
+rule vigilantx_file_detect_magic_WINRAR {
   meta:
     author        = "xCEVre"
     date          = "2025-04-20"

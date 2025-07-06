@@ -1,4 +1,4 @@
-rule file_detect_magic_GNU_Message_Catalog {
+rule vigilantx_file_detect_magic_GNU_Message_Catalog {
   meta:
     author        = "xCEVre"
     date          = "2025-04-12"
@@ -12,7 +12,7 @@ rule file_detect_magic_GNU_Message_Catalog {
     $header at 0
 }
 
-rule file_detect_magic_GNU_DB {
+rule vigilantx_file_detect_magic_GNU_DB {
   meta:
     author        = "xCEVre"
     date          = "2025-04-12"

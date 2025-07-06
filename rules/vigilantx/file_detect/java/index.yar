@@ -1,0 +1,8 @@
+include "rules/vigilantx/file_detect/java/vigilantx_file_detect_magic_JAVA_CLASS.yar"
+include "rules/vigilantx/file_detect/java/vigilantx_file_detect_magic_JAVA_CLASS_v21.yar"
+include "rules/vigilantx/file_detect/java/vigilantx_file_detect_magic_JAVA_CLASS_v23.yar"
+include "rules/vigilantx/file_detect/java/vigilantx_file_detect_magic_JAVA_CLASS_v25.yar"
+include "rules/vigilantx/file_detect/java/vigilantx_file_detect_magic_JAVA_CLASS_v8.yar"
+include "rules/vigilantx/file_detect/java/vigilantx_file_detect_magic_JAVA_MODULE.yar"
+include "rules/vigilantx/file_detect/java/vigilantx_file_detect_magic_JAVA_MODULE_V1.yar"
+include "rules/vigilantx/file_detect/java/vigilantx_file_detect_magic_JAVA_SER.yar"

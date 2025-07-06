@@ -1,0 +1,8 @@
+include "rules/vigilantx/file_detect/file_detect_magic.yara"
+include "rules/vigilantx/file_detect/file_detect_magic_CHROMIUM.yara"
+include "rules/vigilantx/file_detect/file_detect_magic_GNU.yara"
+include "rules/vigilantx/file_detect/file_detect_magic_MINIX.yara"
+include "rules/vigilantx/file_detect/file_detect_magic_PYTHON.yara"
+include "rules/vigilantx/file_detect/file_detect_magic_RENPY.yara"
+include "rules/vigilantx/file_detect/file_detect_magic_STEAM.yara"
+include "rules/vigilantx/file_detect/file_detect_magic_WINRAR.yara"

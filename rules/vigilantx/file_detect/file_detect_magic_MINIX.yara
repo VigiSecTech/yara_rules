@@ -1,4 +1,4 @@
-rule file_detect_magic_MINIX_MODULE {
+rule vigilantx_file_detect_magic_MINIX_MODULE {
   meta:
     author        = "xCEVre"
     date          = "2025-04-12"
