@@ -56,7 +56,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_23205761636F {
     date          = "2025-07-06"
     severityLevel = "UNKNOWN"
   strings:
-    $magic = "# Waco"
+    $magic = "# Wacom\n# "
   condition:
     $magic at 0
 }
