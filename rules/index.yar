@@ -1,2 +1,2 @@
-include "vigilantx/index.yar"
-include "anyrun/index.yar"
+include "rules/vigilantx/index.yar"
+include "rules/anyrun/index.yar"

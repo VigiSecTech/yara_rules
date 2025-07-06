@@ -1,5 +1,3 @@
-include "file_detect/index.yar"
-include "file_detect/java/index.yar"
-include "potentially_dangerous/index.yar"
-include "data_exfiltration/index.yar"
-
+include "rules/vigilantx/file_detect/index.yar"
+include "rules/vigilantx/potentially_dangerous/index.yar"
+include "rules/vigilantx/data_exfiltration/index.yar"
