@@ -8,7 +8,7 @@
 //	ARCHIVE       // Используется для хранилищ (архивы и тд)
 //	UNKNOWN       // Не известно
 
-rule vigilantx_file_detect_magic_Bethesda_ESM {
+rule vigilantx_file_detect_magic_Bethesda_ESM : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-26"
@@ -23,7 +23,7 @@ rule vigilantx_file_detect_magic_Bethesda_ESM {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_UNKNOWN_ba2 {
+rule vigilantx_file_detect_magic_UNKNOWN_ba2 : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-26"
@@ -38,7 +38,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_ba2 {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_UNKNOWN_csg {
+rule vigilantx_file_detect_magic_UNKNOWN_csg : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-26"
@@ -53,7 +53,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_csg {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_UNKNOWN_cdx {
+rule vigilantx_file_detect_magic_UNKNOWN_cdx : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-26"
@@ -68,7 +68,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_cdx {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_video_Bink {
+rule vigilantx_file_detect_magic_video_Bink : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-26"
@@ -82,7 +82,7 @@ rule vigilantx_file_detect_magic_video_Bink {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_archive_FreeArc {
+rule vigilantx_file_detect_magic_archive_FreeArc : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -97,7 +97,7 @@ rule vigilantx_file_detect_magic_archive_FreeArc {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_SHEBANG_PERL {
+rule vigilantx_file_detect_magic_SHEBANG_PERL : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -111,7 +111,7 @@ rule vigilantx_file_detect_magic_SHEBANG_PERL {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_SHEBANG_SH {
+rule vigilantx_file_detect_magic_SHEBANG_SH : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -126,7 +126,7 @@ rule vigilantx_file_detect_magic_SHEBANG_SH {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_SHEBANG_ENV_BASH {
+rule vigilantx_file_detect_magic_SHEBANG_ENV_BASH : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -140,7 +140,7 @@ rule vigilantx_file_detect_magic_SHEBANG_ENV_BASH {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_SVG {
+rule vigilantx_file_detect_magic_SVG : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -154,7 +154,7 @@ rule vigilantx_file_detect_magic_SVG {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_xpm {
+rule vigilantx_file_detect_magic_xpm : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-12"
@@ -168,7 +168,7 @@ rule vigilantx_file_detect_magic_xpm {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_CRYPTO_PEM_RSA_PRIVATE_KEY {
+rule vigilantx_file_detect_magic_CRYPTO_PEM_RSA_PRIVATE_KEY : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-05"
@@ -182,7 +182,7 @@ rule vigilantx_file_detect_magic_CRYPTO_PEM_RSA_PRIVATE_KEY {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_CRYPTO_PEM_CERTIFICATE {
+rule vigilantx_file_detect_magic_CRYPTO_PEM_CERTIFICATE : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-05"
@@ -197,7 +197,7 @@ rule vigilantx_file_detect_magic_CRYPTO_PEM_CERTIFICATE {
     any of them
 }
 
-rule vigilantx_file_detect_magic_CRYPTO_DH_PARAMETERS {
+rule vigilantx_file_detect_magic_CRYPTO_DH_PARAMETERS : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-05"
@@ -212,7 +212,7 @@ rule vigilantx_file_detect_magic_CRYPTO_DH_PARAMETERS {
     any of them
 }
 
-rule vigilantx_file_detect_magic_ELF {
+rule vigilantx_file_detect_magic_ELF : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-05"
@@ -226,7 +226,7 @@ rule vigilantx_file_detect_magic_ELF {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_SpaceRangersHD_Save {
+rule vigilantx_file_detect_magic_SpaceRangersHD_Save : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -240,7 +240,7 @@ rule vigilantx_file_detect_magic_SpaceRangersHD_Save {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_Composite_Document_File_V2 {
+rule vigilantx_file_detect_magic_Composite_Document_File_V2 : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-12"
@@ -254,7 +254,7 @@ rule vigilantx_file_detect_magic_Composite_Document_File_V2 {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_PaintShop_Pro_color_palette {
+rule vigilantx_file_detect_magic_PaintShop_Pro_color_palette : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-12"
@@ -268,7 +268,7 @@ rule vigilantx_file_detect_magic_PaintShop_Pro_color_palette {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_Targa {
+rule vigilantx_file_detect_magic_Targa : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-12"
@@ -283,7 +283,7 @@ rule vigilantx_file_detect_magic_Targa {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_UNKNOWN_tab {
+rule vigilantx_file_detect_magic_UNKNOWN_tab : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-12"
@@ -297,7 +297,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_tab {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_NVIDIA_GLCache {
+rule vigilantx_file_detect_magic_NVIDIA_GLCache : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-12"
@@ -313,7 +313,7 @@ rule vigilantx_file_detect_magic_NVIDIA_GLCache {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_UNKNOWN_mhr {
+rule vigilantx_file_detect_magic_UNKNOWN_mhr : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-12"
@@ -327,7 +327,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_mhr {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_UNKNOWN_slp {
+rule vigilantx_file_detect_magic_UNKNOWN_slp : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-12"
@@ -341,7 +341,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_slp {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_UNKNOWN_ted {
+rule vigilantx_file_detect_magic_UNKNOWN_ted : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-12"
@@ -355,7 +355,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_ted {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_UNKNOWN_mm {
+rule vigilantx_file_detect_magic_UNKNOWN_mm : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -369,7 +369,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_mm {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_UNKNOWN_DRS {
+rule vigilantx_file_detect_magic_UNKNOWN_DRS : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -383,7 +383,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_DRS {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_UNKNOWN_CPX {
+rule vigilantx_file_detect_magic_UNKNOWN_CPX : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -397,7 +397,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_CPX {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_UNKNOWN_cp1 {
+rule vigilantx_file_detect_magic_UNKNOWN_cp1 : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -411,7 +411,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_cp1 {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_APPLE_DESKTOP_SERVICES_STORE {
+rule vigilantx_file_detect_magic_APPLE_DESKTOP_SERVICES_STORE : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-04"
@@ -425,7 +425,7 @@ rule vigilantx_file_detect_magic_APPLE_DESKTOP_SERVICES_STORE {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_UNITY_LEVEL {
+rule vigilantx_file_detect_magic_UNITY_LEVEL : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-04"
@@ -439,7 +439,7 @@ rule vigilantx_file_detect_magic_UNITY_LEVEL {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_UNITY_resource {
+rule vigilantx_file_detect_magic_UNITY_resource : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-04"
@@ -453,7 +453,7 @@ rule vigilantx_file_detect_magic_UNITY_resource {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_WINE_REG_V2 {
+rule vigilantx_file_detect_magic_WINE_REG_V2 : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -467,7 +467,7 @@ rule vigilantx_file_detect_magic_WINE_REG_V2 {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_MS_Windows_Icon_Resource {
+rule vigilantx_file_detect_magic_MS_Windows_Icon_Resource : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -482,7 +482,7 @@ rule vigilantx_file_detect_magic_MS_Windows_Icon_Resource {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_MS_Window_Setup_INFormation {
+rule vigilantx_file_detect_magic_MS_Window_Setup_INFormation : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -497,7 +497,7 @@ rule vigilantx_file_detect_magic_MS_Window_Setup_INFormation {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_UNKNOWN_1_dat {
+rule vigilantx_file_detect_magic_UNKNOWN_1_dat : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -511,7 +511,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_1_dat {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_UNKNOWN_2_dat {
+rule vigilantx_file_detect_magic_UNKNOWN_2_dat : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -525,7 +525,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_2_dat {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_UNKNOWN_1_bin {
+rule vigilantx_file_detect_magic_UNKNOWN_1_bin : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -539,7 +539,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_1_bin {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_UNKNOWN_foz {
+rule vigilantx_file_detect_magic_UNKNOWN_foz : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-11"
@@ -553,7 +553,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_foz {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_CHROMIUM_LOCALE_PACK {
+rule vigilantx_file_detect_magic_CHROMIUM_LOCALE_PACK : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-03"
@@ -567,7 +567,7 @@ rule vigilantx_file_detect_magic_CHROMIUM_LOCALE_PACK {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_RVDATA2 {
+rule vigilantx_file_detect_magic_RVDATA2 : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-03"
@@ -581,7 +581,7 @@ rule vigilantx_file_detect_magic_RVDATA2 {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_RIFF {
+rule vigilantx_file_detect_magic_RIFF : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-01"
@@ -596,7 +596,7 @@ rule vigilantx_file_detect_magic_RIFF {
     $riff_header at 0
 }
 
-rule vigilantx_file_detect_magic_RIFF_AVI {
+rule vigilantx_file_detect_magic_RIFF_AVI : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-01"
@@ -610,7 +610,7 @@ rule vigilantx_file_detect_magic_RIFF_AVI {
     vigilantx_file_detect_magic_RIFF and $avi at 8
 }
 
-rule vigilantx_file_detect_magic_RIFF_WAV {
+rule vigilantx_file_detect_magic_RIFF_WAV : filetype {
   meta:
     description   = "Detects RIFF WAV (Wave Audio File Format) files"
     author        = "xCEVre"
@@ -624,7 +624,7 @@ rule vigilantx_file_detect_magic_RIFF_WAV {
     vigilantx_file_detect_magic_RIFF and $wave_marker at 8
 }
 
-rule vigilantx_file_detect_magic_RIFF_WEBP {
+rule vigilantx_file_detect_magic_RIFF_WEBP : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-01"
@@ -639,7 +639,7 @@ rule vigilantx_file_detect_magic_RIFF_WEBP {
     vigilantx_file_detect_magic_RIFF and $webp_header at 8
 }
 
-rule vigilantx_file_detect_magic_CEPACK {
+rule vigilantx_file_detect_magic_CEPACK : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-02"
@@ -653,7 +653,7 @@ rule vigilantx_file_detect_magic_CEPACK {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_UNKNOWN_EXT_PKG_1 {
+rule vigilantx_file_detect_magic_UNKNOWN_EXT_PKG_1 : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-02"
@@ -667,7 +667,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_EXT_PKG_1 {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_UNKNOWN_IMAGE_CONTAINER_1 {
+rule vigilantx_file_detect_magic_UNKNOWN_IMAGE_CONTAINER_1 : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-01"
@@ -682,7 +682,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_IMAGE_CONTAINER_1 {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_UNKNOWN_ADS_DATA_kva {
+rule vigilantx_file_detect_magic_UNKNOWN_ADS_DATA_kva : filetype {
   meta:
     author      = "xCEVre"
     date        = "2025-04-01"
@@ -695,7 +695,7 @@ rule vigilantx_file_detect_magic_UNKNOWN_ADS_DATA_kva {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_grafana_BeylaConfig {
+rule vigilantx_file_detect_magic_grafana_BeylaConfig : filetype {
   meta:
     author = "xCEVre"
     date   = "2025-04-01"
@@ -707,7 +707,7 @@ rule vigilantx_file_detect_magic_grafana_BeylaConfig {
     $magic at 0
 }
 
-rule vigilantx_file_detect_magic_XML {
+rule vigilantx_file_detect_magic_XML : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-01"
@@ -721,7 +721,7 @@ rule vigilantx_file_detect_magic_XML {
     ($xml_BOM at 0 and $xml_header at 3) or ($xml_header at 0)
 }
 
-rule vigilantx_file_detect_magic_HTML {
+rule vigilantx_file_detect_magic_HTML : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-01"
@@ -736,7 +736,7 @@ rule vigilantx_file_detect_magic_HTML {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_AllInOneOfflineMaps {
+rule vigilantx_file_detect_magic_AllInOneOfflineMaps : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-01"
@@ -750,7 +750,7 @@ rule vigilantx_file_detect_magic_AllInOneOfflineMaps {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_AllInOneOfflineMaps_WPT {
+rule vigilantx_file_detect_magic_AllInOneOfflineMaps_WPT : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-01"
@@ -763,7 +763,7 @@ rule vigilantx_file_detect_magic_AllInOneOfflineMaps_WPT {
     vigilantx_file_detect_magic_AllInOneOfflineMaps and $header at 2
 }
 
-rule vigilantx_file_detect_magic_AllInOneOfflineMaps_ARE {
+rule vigilantx_file_detect_magic_AllInOneOfflineMaps_ARE : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-01"
@@ -776,7 +776,7 @@ rule vigilantx_file_detect_magic_AllInOneOfflineMaps_ARE {
     vigilantx_file_detect_magic_AllInOneOfflineMaps and $header at 2
 }
 
-rule vigilantx_file_detect_magic_AllInOneOfflineMaps_RTE {
+rule vigilantx_file_detect_magic_AllInOneOfflineMaps_RTE : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-01"
@@ -789,7 +789,7 @@ rule vigilantx_file_detect_magic_AllInOneOfflineMaps_RTE {
     vigilantx_file_detect_magic_AllInOneOfflineMaps and $header at 2
 }
 
-rule vigilantx_file_detect_magic_AllInOneOfflineMaps_TRK {
+rule vigilantx_file_detect_magic_AllInOneOfflineMaps_TRK : filetype {
   meta:
     author        = "xCEVre"
     date          = "2025-04-01"
@@ -802,7 +802,7 @@ rule vigilantx_file_detect_magic_AllInOneOfflineMaps_TRK {
     vigilantx_file_detect_magic_AllInOneOfflineMaps and $header at 2
 }
 
-rule vigilantx_file_detect_magic_SQLITE3 {
+rule vigilantx_file_detect_magic_SQLITE3 : filetype {
   meta:
     description   = "Detects SQLite version 3 database files"
     author        = "xCEVre"
@@ -816,7 +816,7 @@ rule vigilantx_file_detect_magic_SQLITE3 {
     $magic_header at 0
 }
 
-rule vigilantx_file_detect_magic_SQLITE3_SHM {
+rule vigilantx_file_detect_magic_SQLITE3_SHM : filetype {
   meta:
     description   = "Detects SQLite Write-Ahead Log shared memory (.db-shm) files"
     author        = "xCEVre"
@@ -831,7 +831,7 @@ rule vigilantx_file_detect_magic_SQLITE3_SHM {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_SQLITE_WAL {
+rule vigilantx_file_detect_magic_SQLITE_WAL : filetype {
   meta:
     description   = "Detects SQLite Write-Ahead Log (.db-wal) files"
     author        = "xCEVre"
@@ -845,7 +845,7 @@ rule vigilantx_file_detect_magic_SQLITE_WAL {
     $signature_1 at 0
 }
 
-rule vigilantx_file_detect_magic_LINUX_I386_OBJECT_FILE {
+rule vigilantx_file_detect_magic_LINUX_I386_OBJECT_FILE : filetype {
   meta:
     description   = "Detects Linux/i386 object files (.xlog)"
     author        = "xCEVre"
@@ -859,7 +859,7 @@ rule vigilantx_file_detect_magic_LINUX_I386_OBJECT_FILE {
     $signature_1 at 0
 }
 
-rule vigilantx_file_detect_magic_PDP11_KERNEL_OVERLAY {
+rule vigilantx_file_detect_magic_PDP11_KERNEL_OVERLAY : filetype {
   meta:
     description   = "Detects PDP-11 kernel overlay files (general rule)"
     author        = "xCEVre"
@@ -873,7 +873,7 @@ rule vigilantx_file_detect_magic_PDP11_KERNEL_OVERLAY {
     $signature at 0  // Проверка наличия сигнатуры в начале файла
 }
 
-rule vigilantx_file_detect_magic_ADOBE_COLOR_SWATCH {
+rule vigilantx_file_detect_magic_ADOBE_COLOR_SWATCH : filetype {
   meta:
     description   = "Detects Adobe Photoshop Color Swatch files (.aco)"
     author        = "xCEVre"
@@ -889,7 +889,7 @@ rule vigilantx_file_detect_magic_ADOBE_COLOR_SWATCH {
     $header_version at 0 and $header_info and $swatch_bytes  // Проверка заголовка и байтовой последовательности
 }
 
-rule vigilantx_file_detect_magic_MP3 {
+rule vigilantx_file_detect_magic_MP3 : filetype {
   meta:
     description = "Detects MP3 files (MPEG Audio Layer III)"
     author      = "xCEVre"
@@ -902,7 +902,7 @@ rule vigilantx_file_detect_magic_MP3 {
     $id3_header at 0
 }
 
-rule vigilantx_file_detect_magic_Flash_Player_Locale {
+rule vigilantx_file_detect_magic_Flash_Player_Locale : filetype {
   meta:
     description = "Detects Flash Player localization files"
     author      = "xCEVre"
@@ -916,7 +916,7 @@ rule vigilantx_file_detect_magic_Flash_Player_Locale {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_PE {
+rule vigilantx_file_detect_magic_PE : filetype {
   meta:
     description = "Detects generic PE (Portable Executable) files"
     author      = "xCEVre"
@@ -932,7 +932,7 @@ rule vigilantx_file_detect_magic_PE {
     $mz_header at 0 and $pe_header in (0..0x200) and $dos_message
 }
 
-rule vigilantx_file_detect_magic_PE_TOTAL {
+rule vigilantx_file_detect_magic_PE_TOTAL : filetype {
   meta:
     description = "Detects generic PE (Portable Executable) files"
     author      = "xCEVre"
@@ -946,7 +946,7 @@ rule vigilantx_file_detect_magic_PE_TOTAL {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_MAC_OS_X_ICON {
+rule vigilantx_file_detect_magic_MAC_OS_X_ICON : filetype {
   meta:
     description = "Detects Apple ICNS (icon) files"
     author      = "xCEVre"
@@ -961,7 +961,7 @@ rule vigilantx_file_detect_magic_MAC_OS_X_ICON {
     $icns_header at 0 and $toc_entry in (0..0x100)
 }
 
-rule vigilantx_file_detect_magic_MAC_OS_X_MachO {
+rule vigilantx_file_detect_magic_MAC_OS_X_MachO : filetype {
   meta:
     description = "Detects Mach-O executable files"
     author      = "xCEVre"
@@ -976,7 +976,7 @@ rule vigilantx_file_detect_magic_MAC_OS_X_MachO {
     $mach_o_fat at 0 or $mach_o_64 at 0
 }
 
-rule vigilantx_file_detect_magic_MAC_OS_X_Binary_Property_List {
+rule vigilantx_file_detect_magic_MAC_OS_X_Binary_Property_List : filetype {
   meta:
     description = "Detects Apple Binary Property List (bplist) files"
     author      = "xCEVre"
@@ -990,7 +990,7 @@ rule vigilantx_file_detect_magic_MAC_OS_X_Binary_Property_List {
     $bplist_header at 0
 }
 
-rule vigilantx_file_detect_magic_MAC_OS_X_CodeResources_File {
+rule vigilantx_file_detect_magic_MAC_OS_X_CodeResources_File : filetype {
   meta:
     description = "Detects Apple CodeResources files used for code signing"
     author      = "xCEVre"
@@ -1004,7 +1004,7 @@ rule vigilantx_file_detect_magic_MAC_OS_X_CodeResources_File {
     $code_resources_magic at 0
 }
 
-rule vigilantx_file_detect_magic_MAC_OS_X_NSHumanReadableCopyright_utf16 {
+rule vigilantx_file_detect_magic_MAC_OS_X_NSHumanReadableCopyright_utf16 : filetype {
   meta:
     description = "Detects files containing NSHumanReadableCopyright in UTF-16 encoding"
     author      = "xCEVre"
@@ -1023,7 +1023,7 @@ rule vigilantx_file_detect_magic_MAC_OS_X_NSHumanReadableCopyright_utf16 {
     $copyright_text
 }
 
-rule vigilantx_file_detect_magic_MAC_OS_X_Plist {
+rule vigilantx_file_detect_magic_MAC_OS_X_Plist : filetype {
   meta:
     description   = "Checks for the presence of XML declaration and DOCTYPE plist"
     author        = "xCEVre"
@@ -1038,7 +1038,7 @@ rule vigilantx_file_detect_magic_MAC_OS_X_Plist {
     $xml_declaration at 0 and $doctype_plist
 }
 
-rule vigilantx_file_detect_magic_MAC_OS_X_PkgInfo {
+rule vigilantx_file_detect_magic_MAC_OS_X_PkgInfo : filetype {
   meta:
     description = "Detects Apple CodeResources files used for code signing"
     author      = "xCEVre"
@@ -1053,7 +1053,7 @@ rule vigilantx_file_detect_magic_MAC_OS_X_PkgInfo {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_fontconfig_cache {
+rule vigilantx_file_detect_magic_fontconfig_cache : filetype {
   meta:
     description = "Detects fontconfig cache file: le64-9"
     author      = "xCEVre"
@@ -1066,7 +1066,7 @@ rule vigilantx_file_detect_magic_fontconfig_cache {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_AVIF {
+rule vigilantx_file_detect_magic_AVIF : filetype {
   meta:
     description = "Detects AVIF (AV1 Image File Format) files"
     author      = "xCEVre"
@@ -1081,7 +1081,7 @@ rule vigilantx_file_detect_magic_AVIF {
     $avif_header at 4
 }
 
-rule vigilantx_file_detect_magic_PNG {
+rule vigilantx_file_detect_magic_PNG : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects PNG files by their magic bytes"
@@ -1106,7 +1106,7 @@ rule vigilantx_file_detect_magic_OPUS_OGG {
     $opus_magic at 0
 }
 
-rule vigilantx_file_detect_magic_JPEG {
+rule vigilantx_file_detect_magic_JPEG : filetype {
   meta:
     description = "Обнаружение JPEG-файлов"
 
@@ -1117,7 +1117,7 @@ rule vigilantx_file_detect_magic_JPEG {
     $jpeg_soi at 0
 }
 
-rule vigilantx_file_detect_magic_JPEG_with_GPS {
+rule vigilantx_file_detect_magic_JPEG_with_GPS : filetype {
   meta:
     description = "Поиск JPEG-файлов с GPS-координатами"
 
@@ -1131,7 +1131,7 @@ rule vigilantx_file_detect_magic_JPEG_with_GPS {
     vigilantx_file_detect_magic_JPEG and all of them
 }
 
-rule vigilantx_file_detect_magic_JPEG_with_GPS_ALT {
+rule vigilantx_file_detect_magic_JPEG_with_GPS_ALT : filetype {
   meta:
     description = "Поиск JPEG-файлов с GPS-координатами (+ высота)"
 
@@ -1142,7 +1142,7 @@ rule vigilantx_file_detect_magic_JPEG_with_GPS_ALT {
     vigilantx_file_detect_magic_JPEG_with_GPS and $gps_alt
 }
 
-rule vigilantx_file_detect_magic_MP4 {
+rule vigilantx_file_detect_magic_MP4 : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects MP4 files by their magic bytes"
@@ -1156,7 +1156,7 @@ rule vigilantx_file_detect_magic_MP4 {
     any of them at 4
 }
 
-rule vigilantx_file_detect_magic_SWF {
+rule vigilantx_file_detect_magic_SWF : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects Adobe Flash SWF files by their magic bytes"
@@ -1169,7 +1169,7 @@ rule vigilantx_file_detect_magic_SWF {
     $swf_compressed at 0 or $swf_uncompressed at 0
 }
 
-rule vigilantx_file_detect_magic_WOFF {
+rule vigilantx_file_detect_magic_WOFF : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects WOFF font files"
@@ -1182,7 +1182,7 @@ rule vigilantx_file_detect_magic_WOFF {
     $woff at 0 or $woff2 at 0
 }
 
-rule vigilantx_file_detect_magic_TORRENT {
+rule vigilantx_file_detect_magic_TORRENT : filetype {
   meta:
     description = "Detects torrent files based on Bencode structure"
     author      = "xCEVre"
@@ -1199,7 +1199,7 @@ rule vigilantx_file_detect_magic_TORRENT {
     any of them at 0
 }
 
-rule vigilantx_file_detect_magic_PDF {
+rule vigilantx_file_detect_magic_PDF : filetype {
   meta:
     description = "Detects PDF files based on magic number and EOF marker"
     author      = "xCEVre"
@@ -1213,7 +1213,7 @@ rule vigilantx_file_detect_magic_PDF {
     $pdf_magic at 0
 }
 
-rule vigilantx_file_detect_magic_X509_Cert {
+rule vigilantx_file_detect_magic_X509_Cert : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects DER and PEM encoded X.509 certificates"
@@ -1226,7 +1226,7 @@ rule vigilantx_file_detect_magic_X509_Cert {
     $der_cert at 0 or $pem_cert at 0
 }
 
-rule vigilantx_file_detect_magic_X509_CSR {
+rule vigilantx_file_detect_magic_X509_CSR : filetype {
   meta:
     author        = "xCEVre"
     description   = "Detects PEM encoded X.509 Certificate Signing Request (CSR)"
@@ -1239,7 +1239,7 @@ rule vigilantx_file_detect_magic_X509_CSR {
     $csr at 0
 }
 
-rule vigilantx_file_detect_magic_SSH_Public_Key {
+rule vigilantx_file_detect_magic_SSH_Public_Key : filetype {
   meta:
     author        = "xCEVre"
     description   = "Detects OpenSSH public key files"
@@ -1252,7 +1252,7 @@ rule vigilantx_file_detect_magic_SSH_Public_Key {
     $ssh_pub at 0
 }
 
-rule vigilantx_file_detect_magic_PKCS8_Private_Key {
+rule vigilantx_file_detect_magic_PKCS8_Private_Key : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects PEM encoded PKCS#8 private keys"
@@ -1264,7 +1264,7 @@ rule vigilantx_file_detect_magic_PKCS8_Private_Key {
     $pkcs8_key at 0
 }
 
-rule vigilantx_file_detect_magic_RSA_Private_Key {
+rule vigilantx_file_detect_magic_RSA_Private_Key : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects PEM encoded RSA private keys"
@@ -1276,7 +1276,7 @@ rule vigilantx_file_detect_magic_RSA_Private_Key {
     $rsa_key at 0
 }
 
-rule vigilantx_file_detect_magic_DSA_Private_Key {
+rule vigilantx_file_detect_magic_DSA_Private_Key : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects PEM encoded DSA private keys"
@@ -1288,7 +1288,7 @@ rule vigilantx_file_detect_magic_DSA_Private_Key {
     $dsa_key at 0
 }
 
-rule vigilantx_file_detect_magic_OpenSSH_Private_Key {
+rule vigilantx_file_detect_magic_OpenSSH_Private_Key : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects OpenSSH private keys"
@@ -1300,7 +1300,7 @@ rule vigilantx_file_detect_magic_OpenSSH_Private_Key {
     $openssh_key at 0
 }
 
-rule vigilantx_file_detect_magic_PuTTY_Private_Key_V2 {
+rule vigilantx_file_detect_magic_PuTTY_Private_Key_V2 : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects PuTTY private key file version 2"
@@ -1312,7 +1312,7 @@ rule vigilantx_file_detect_magic_PuTTY_Private_Key_V2 {
     $putty_v2 at 0
 }
 
-rule vigilantx_file_detect_magic_PuTTY_Private_Key_V3 {
+rule vigilantx_file_detect_magic_PuTTY_Private_Key_V3 : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects PuTTY private key file version 3"
@@ -1324,7 +1324,7 @@ rule vigilantx_file_detect_magic_PuTTY_Private_Key_V3 {
     $putty_v3 at 0
 }
 
-rule vigilantx_file_detect_magic_GZIP {
+rule vigilantx_file_detect_magic_GZIP : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects GZIP compressed files by their magic bytes"
@@ -1336,7 +1336,7 @@ rule vigilantx_file_detect_magic_GZIP {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_XZ {
+rule vigilantx_file_detect_magic_XZ : filetype {
   meta:
     author        = "xCEVre"
     description   = "Detects XZ compressed files by their magic bytes"
@@ -1349,7 +1349,7 @@ rule vigilantx_file_detect_magic_XZ {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_LZ4 {
+rule vigilantx_file_detect_magic_LZ4 : filetype {
   meta:
     author        = "xCEVre"
     description   = "Detects LZ4 compressed files by their magic bytes"
@@ -1362,7 +1362,7 @@ rule vigilantx_file_detect_magic_LZ4 {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_CAB {
+rule vigilantx_file_detect_magic_CAB : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects Microsoft Cabinet files by their magic bytes"
@@ -1374,7 +1374,7 @@ rule vigilantx_file_detect_magic_CAB {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_7Z {
+rule vigilantx_file_detect_magic_7Z : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects 7-Zip archive files by their magic bytes"
@@ -1386,7 +1386,7 @@ rule vigilantx_file_detect_magic_7Z {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_Matroska {
+rule vigilantx_file_detect_magic_Matroska : filetype {
   meta:
     author        = "xCEVre"
     description   = "Detects Matroska media container files (MKV, MKA, MKS, MK3D, WebM)"
@@ -1399,7 +1399,7 @@ rule vigilantx_file_detect_magic_Matroska {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_DER {
+rule vigilantx_file_detect_magic_DER : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects DER-encoded X.509 certificates"
@@ -1411,7 +1411,7 @@ rule vigilantx_file_detect_magic_DER {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_WASM {
+rule vigilantx_file_detect_magic_WASM : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects WebAssembly binary files by their magic bytes"
@@ -1424,7 +1424,7 @@ rule vigilantx_file_detect_magic_WASM {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_LeptonJPEG {
+rule vigilantx_file_detect_magic_LeptonJPEG : filetype {
   meta:
     author        = "xCEVre"
     description   = "Detects Lepton compressed JPEG images by their magic bytes"
@@ -1437,7 +1437,7 @@ rule vigilantx_file_detect_magic_LeptonJPEG {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_RTF {
+rule vigilantx_file_detect_magic_RTF : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects Rich Text Format (RTF) files by their magic bytes"
@@ -1449,7 +1449,7 @@ rule vigilantx_file_detect_magic_RTF {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_GIF {
+rule vigilantx_file_detect_magic_GIF : filetype {
   meta:
     author        = "xCEVre"
     description   = "Detects GIF files by their magic bytes"
@@ -1462,7 +1462,7 @@ rule vigilantx_file_detect_magic_GIF {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_ZIP {
+rule vigilantx_file_detect_magic_ZIP : filetype {
   meta:
     author        = "xCEVre"
     description   = "Detects files that contain the ZIP magic number (PK..)"
@@ -1473,7 +1473,7 @@ rule vigilantx_file_detect_magic_ZIP {
     uint32be(0) == 0x504B0304  // { 50 4B 03 04 }
 }
 
-rule vigilantx_file_detect_magic_MPEG_Program_Stream {
+rule vigilantx_file_detect_magic_MPEG_Program_Stream : filetype  {
   meta:
     author      = "xCEVre"
     description = "Detects MPEG Program Stream files (MPEG-1 Part 1 and MPEG-2 Part 1)"
@@ -1482,7 +1482,7 @@ rule vigilantx_file_detect_magic_MPEG_Program_Stream {
     uint32be(0) == 0x000001BA  // { 00 00 01 BA }
 }
 
-rule vigilantx_file_detect_magic_MPEG_Video {
+rule vigilantx_file_detect_magic_MPEG_Video : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects MPEG-1 and MPEG-2 video files by their magic bytes"
@@ -1494,7 +1494,7 @@ rule vigilantx_file_detect_magic_MPEG_Video {
     $header_2 at 0
 }
 
-rule vigilantx_file_detect_magic_Roblox_Place {
+rule vigilantx_file_detect_magic_Roblox_Place : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects Roblox place file (rbxl) by magic bytes"
@@ -1506,7 +1506,7 @@ rule vigilantx_file_detect_magic_Roblox_Place {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_Lua_Bytecode {
+rule vigilantx_file_detect_magic_Lua_Bytecode : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects Lua bytecode file (luac) by magic bytes"
@@ -1518,7 +1518,7 @@ rule vigilantx_file_detect_magic_Lua_Bytecode {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_PGP {
+rule vigilantx_file_detect_magic_PGP : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects PGP file by magic bytes"
@@ -1530,7 +1530,7 @@ rule vigilantx_file_detect_magic_PGP {
     $pgp_header at 0
 }
 
-rule vigilantx_file_detect_magic_Zstandard {
+rule vigilantx_file_detect_magic_Zstandard : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects Zstandard compressed file by magic bytes"
@@ -1542,7 +1542,7 @@ rule vigilantx_file_detect_magic_Zstandard {
     $zst_header at 0
 }
 
-rule vigilantx_file_detect_magic_QCOW {
+rule vigilantx_file_detect_magic_QCOW : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects QCOW file by magic bytes"
@@ -1554,7 +1554,7 @@ rule vigilantx_file_detect_magic_QCOW {
     $qcow_header at 0
 }
 
-rule vigilantx_file_detect_magic_FLV {
+rule vigilantx_file_detect_magic_FLV : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects FLV (Flash Video) file by magic bytes"
@@ -1566,7 +1566,7 @@ rule vigilantx_file_detect_magic_FLV {
     $flv_header at 0
 }
 
-rule vigilantx_file_detect_magic_VDI {
+rule vigilantx_file_detect_magic_VDI : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects VirtualBox Virtual Hard Disk (VDI) file by magic string"
@@ -1578,7 +1578,7 @@ rule vigilantx_file_detect_magic_VDI {
     $vdi_header at 0
 }
 
-rule vigilantx_file_detect_magic_VHD {
+rule vigilantx_file_detect_magic_VHD : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects Windows Virtual PC Virtual Hard Disk (VHD) file by magic string"
@@ -1590,7 +1590,7 @@ rule vigilantx_file_detect_magic_VHD {
     $vhd_header at 0
 }
 
-rule vigilantx_file_detect_magic_VHDX {
+rule vigilantx_file_detect_magic_VHDX : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects Windows Virtual PC Windows 8 Virtual Hard Disk (VHDX) file by magic string"
@@ -1602,7 +1602,7 @@ rule vigilantx_file_detect_magic_VHDX {
     $vhdx_header at 0
 }
 
-rule vigilantx_file_detect_magic_ISZ {
+rule vigilantx_file_detect_magic_ISZ : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects ISZ (Compressed ISO image) file by magic string"
@@ -1614,7 +1614,7 @@ rule vigilantx_file_detect_magic_ISZ {
     $isz_header at 0
 }
 
-rule vigilantx_file_detect_magic_DAA {
+rule vigilantx_file_detect_magic_DAA : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects DAA (Direct Access Archive) file by magic string"
@@ -1626,7 +1626,7 @@ rule vigilantx_file_detect_magic_DAA {
     $daa_header at 0
 }
 
-rule vigilantx_file_detect_magic_EVT {
+rule vigilantx_file_detect_magic_EVT : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects EVT (Windows Event Viewer file) by magic string"
@@ -1638,7 +1638,7 @@ rule vigilantx_file_detect_magic_EVT {
     $evt_header at 0
 }
 
-rule vigilantx_file_detect_magic_EVTX {
+rule vigilantx_file_detect_magic_EVTX : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects EVTX (Windows Event Viewer XML file) by magic string"
@@ -1650,7 +1650,7 @@ rule vigilantx_file_detect_magic_EVTX {
     $evtx_header at 0
 }
 
-rule vigilantx_file_detect_magic_BLEND {
+rule vigilantx_file_detect_magic_BLEND : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects Blender file format by magic string"
@@ -1662,7 +1662,7 @@ rule vigilantx_file_detect_magic_BLEND {
     $blender_header at 0
 }
 
-rule vigilantx_file_detect_magic_JXL {
+rule vigilantx_file_detect_magic_JXL : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects JPEG XL (JXL) image format by magic string"
@@ -1675,7 +1675,7 @@ rule vigilantx_file_detect_magic_JXL {
     ($jxl_header_1 at 0 or $jxl_header_2 at 0)
 }
 
-rule vigilantx_file_detect_magic_TTF {
+rule vigilantx_file_detect_magic_TTF : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects TrueType font (TTF), TrueType collection (TTC), and dfont by magic bytes"
@@ -1688,7 +1688,7 @@ rule vigilantx_file_detect_magic_TTF {
     $ttf_header at 0 or $ttf_header_2 at 0
 }
 
-rule vigilantx_file_detect_magic_OTF {
+rule vigilantx_file_detect_magic_OTF : filetype {
   meta:
     author        = "xCEVre"
     description   = "Detects OpenType font (OTF) by magic bytes"
@@ -1701,7 +1701,7 @@ rule vigilantx_file_detect_magic_OTF {
     $otf_header at 0
 }
 
-rule vigilantx_file_detect_magic_Modulefile {
+rule vigilantx_file_detect_magic_Modulefile : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects Modulefile for Environment Modules"
@@ -1713,7 +1713,7 @@ rule vigilantx_file_detect_magic_Modulefile {
     $modulefile_header at 0
 }
 
-rule vigilantx_file_detect_magic_VBE {
+rule vigilantx_file_detect_magic_VBE : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects VBScript Encoded script (VBE) by magic bytes"
@@ -1725,7 +1725,7 @@ rule vigilantx_file_detect_magic_VBE {
     $vbe_header at 0
 }
 
-rule vigilantx_file_detect_magic_CDB {
+rule vigilantx_file_detect_magic_CDB : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects MikroTik WinBox Connection Database (CDB) by magic bytes"
@@ -1737,7 +1737,7 @@ rule vigilantx_file_detect_magic_CDB {
     $cdb_header at 0
 }
 
-rule vigilantx_file_detect_magic_M3U {
+rule vigilantx_file_detect_magic_M3U : filetype {
   meta:
     author        = "xCEVre"
     description   = "Detects Multimedia playlist (M3U, M3U8) files by magic bytes"
@@ -1750,7 +1750,7 @@ rule vigilantx_file_detect_magic_M3U {
     $m3u_header at 0
 }
 
-rule vigilantx_file_detect_magic_PGP_Public_Key {
+rule vigilantx_file_detect_magic_PGP_Public_Key : filetype {
   meta:
     author        = "xCEVre"
     description   = "Detects Armored PGP public key by magic bytes"
@@ -1763,7 +1763,7 @@ rule vigilantx_file_detect_magic_PGP_Public_Key {
     $pgp_header at 0
 }
 
-rule vigilantx_file_detect_magic_MESA_shader_CACHE_DB {
+rule vigilantx_file_detect_magic_MESA_shader_CACHE_DB : filetype {
   meta:
     author        = "xCEVre"
     description   = "Detects mesa shader cache .{db,idx} "
@@ -1776,7 +1776,7 @@ rule vigilantx_file_detect_magic_MESA_shader_CACHE_DB {
     $header at 0
 }
 
-rule vigilantx_file_detect_magic_m4v {
+rule vigilantx_file_detect_magic_m4v : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects video .m4v "
@@ -1789,7 +1789,7 @@ rule vigilantx_file_detect_magic_m4v {
     $m4v_header at 0
 }
 
-rule vigilantx_file_detect_magic_zlib {
+rule vigilantx_file_detect_magic_zlib : filetype {
   meta:
     author      = "xCEVre"
     description = "Detects zlib compression with no compression and no preset dictionary"

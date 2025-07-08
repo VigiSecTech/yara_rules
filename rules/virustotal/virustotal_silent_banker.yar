@@ -1,4 +1,4 @@
-rule silent_banker: banker {
+rule silent_banker: banker MALWARE {
   meta:
     description  = "This is just an example"
     threat_level = 3

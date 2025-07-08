@@ -1,4 +1,4 @@
-rule RisePro {
+rule RisePro : MALWARE {
   meta:
     author      = "ANY.RUN"
     description = "Detects RisePro (stealer version)"
