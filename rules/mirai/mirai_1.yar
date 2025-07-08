@@ -72,3 +72,30 @@ rule malware_mirai_b: malware {
   condition:
     any of them
 }
+
+rule malware_mirai_momentum: malware {
+  meta:
+    author_malvare_1 = "Anna-Senpai"  // публичный псевдоним, использовался при публикации исходного кода
+    author_malvare_2 = "Josiah White"  // один из реальных разработчиков
+    author_malvare_3 = "Paras Jha"  // совместно создал ботнет
+    author_malvare_4 = "Cody Cornell"  // третий участник команды (некоторые источники указывают его как одного из авторов)
+
+    author_research_1 = "Brian Krebs"  // первый публично сообщил о Mirai после DDoS -атаки на свой сайт
+    author_research_2 = "Artem Kozlyuk"  // исследователь Flashpoint
+    author_research_3 = "Robert Simmons"  // исследователь Flashpoint
+    author_research_4 = "Jeff Brown"  // исследователь Flashpoint
+    author_research_5 = "Lumen Technologies (Level 3)"  // компания, опубликовавшая технический анализ
+    author_research_6 = "FBI"  // установило личности реальных авторов
+    author_research_7 = "Daniel Cuthbert"  // SANS Institute, аналитик по IoT -угрозам
+    author_research_8 = "Kevin Beaumont"  // независимый исследователь безопасности
+
+    description = "Detects Mirai botnet malware components"
+    reference   = "https://www.trendmicro.com/en_us/research/19/l/ddos-attacks-and-iot-exploits-new-activity-from-momentum-botnet.html"
+
+  strings:
+    $word_1 = "SNQUERY: 127.0.0.1:AAAAAA:xsvr"
+    $word_2 = "/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9Aa"
+
+  condition:
+    all of them
+}
