@@ -7,3 +7,6 @@
 [submodule "rules/anyrun/YARA"]
 	path = rules/anyrun/YARA
 	url = https://github.com/anyrun/YARA
+[submodule "rules/bartblaze/Yara-rules"]
+	path = rules/bartblaze/Yara-rules
+	url = https://github.com/bartblaze/Yara-rules
