@@ -1,0 +1,3 @@
+[submodule "rules/elastic/protections-artifacts"]
+	path = rules/elastic/protections-artifacts
+	url = https://github.com/elastic/protections-artifacts.git

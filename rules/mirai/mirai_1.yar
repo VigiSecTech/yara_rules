@@ -1,4 +1,4 @@
-rule malware_mirai_1: malware {
+rule malware_mirai_1: MALWARE {
   meta:
     author_malvare_1 = "Anna-Senpai"  // публичный псевдоним, использовался при публикации исходного кода
     author_malvare_2 = "Josiah White"  // один из реальных разработчиков
@@ -37,7 +37,7 @@ rule malware_mirai_1: malware {
     vigilantx_file_detect_magic_ELF and any of them
 }
 
-rule malware_mirai_b: malware {
+rule malware_mirai_b: MALWARE {
   meta:
     author_malvare_1 = "Anna-Senpai"  // публичный псевдоним, использовался при публикации исходного кода
     author_malvare_2 = "Josiah White"  // один из реальных разработчиков
@@ -73,7 +73,7 @@ rule malware_mirai_b: malware {
     any of them
 }
 
-rule malware_mirai_momentum: malware {
+rule malware_mirai_momentum: MALWARE {
   meta:
     author_malvare_1 = "Anna-Senpai"  // публичный псевдоним, использовался при публикации исходного кода
     author_malvare_2 = "Josiah White"  // один из реальных разработчиков
