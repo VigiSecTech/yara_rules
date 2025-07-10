@@ -1,3 +1,9 @@
 [submodule "rules/elastic/protections-artifacts"]
 	path = rules/elastic/protections-artifacts
 	url = https://github.com/elastic/protections-artifacts.git
+[submodule "rules/AlienVault-Labs/AlienVaultLabs"]
+	path = rules/AlienVault-Labs/AlienVaultLabs
+	url = https://github.com/AlienVault-Labs/AlienVaultLabs.git
+[submodule "rules/anyrun/YARA"]
+	path = rules/anyrun/YARA
+	url = https://github.com/anyrun/YARA
