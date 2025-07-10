@@ -10,3 +10,6 @@
 [submodule "rules/bartblaze/Yara-rules"]
 	path = rules/bartblaze/Yara-rules
 	url = https://github.com/bartblaze/Yara-rules
+[submodule "rules/CyberDefenses/CDI_yara"]
+	path = rules/CyberDefenses/CDI_yara
+	url = https://github.com/CyberDefenses/CDI_yara
