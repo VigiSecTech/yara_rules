@@ -13,3 +13,12 @@
 [submodule "rules/CyberDefenses/CDI_yara"]
 	path = rules/CyberDefenses/CDI_yara
 	url = https://github.com/CyberDefenses/CDI_yara
+[submodule "rules/eset/malware-ioc"]
+	path = rules/eset/malware-ioc
+	url = https://github.com/eset/malware-ioc/
+[submodule "rules/malpedia/signator-rules"]
+	path = rules/malpedia/signator-rules
+	url = https://github.com/malpedia/signator-rules
+[submodule "rules/rapid7/Rapid7-Labs"]
+	path = rules/rapid7/Rapid7-Labs
+	url = https://github.com/rapid7/Rapid7-Labs
