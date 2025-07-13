@@ -22,3 +22,6 @@
 [submodule "rules/rapid7/Rapid7-Labs"]
 	path = rules/rapid7/Rapid7-Labs
 	url = https://github.com/rapid7/Rapid7-Labs
+[submodule "rules/roadwy/DefenderYara"]
+	path = rules/roadwy/DefenderYara
+	url = https://github.com/roadwy/DefenderYara
