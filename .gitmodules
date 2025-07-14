@@ -25,3 +25,6 @@
 [submodule "rules/roadwy/DefenderYara"]
 	path = rules/roadwy/DefenderYara
 	url = https://github.com/roadwy/DefenderYara
+[submodule "rules/intezer/yara-rules"]
+	path = rules/intezer/yara-rules
+	url = https://github.com/intezer/yara-rules
