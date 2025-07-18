@@ -16,3 +16,7 @@ include "rules/rapid7/index.yar"
 include "rules/roadwy/index.yar"
 include "rules/virustotal/index.yar"
 include "rules/intezer/index.yar"
+
+
+include "rules/avast/index.yar"
+

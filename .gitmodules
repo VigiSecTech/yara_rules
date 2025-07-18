@@ -28,3 +28,6 @@
 [submodule "rules/intezer/yara-rules"]
 	path = rules/intezer/yara-rules
 	url = https://github.com/intezer/yara-rules
+[submodule "rules/avast/ioc"]
+	path = rules/avast/ioc
+	url = https://github.com/avast/ioc
