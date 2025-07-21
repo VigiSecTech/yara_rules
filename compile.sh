@@ -1,1 +1,1 @@
-yr compile rules/index.yar -o rules.yarc
+yr compile rules/index.yar -o compiled_rule.yarc

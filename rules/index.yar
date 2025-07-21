@@ -20,4 +20,4 @@ include "rules/intezer/index.yar"
 
 include "rules/avast/index.yar"
 include "rules/acronis/index.yar"
-
+include "rules/netsecfish/index.yar"
