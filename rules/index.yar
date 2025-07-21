@@ -19,4 +19,5 @@ include "rules/intezer/index.yar"
 
 
 include "rules/avast/index.yar"
+include "rules/acronis/index.yar"
 
